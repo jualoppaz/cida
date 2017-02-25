@@ -1,0 +1,42 @@
+{
+  "name": "cida",
+  "version": "1.0.0",
+  "description": "Aplicación de ejemplo para la integración continua en aplicaciones AngularJS con Brunch, haciendo uso de JSHint o Sass, entre otras.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jualoppaz/cida.git"
+  },
+  "keywords": [
+    "angular",
+    "node",
+    "brunch",
+    "sass",
+    "jshint"
+  ],
+  "author": "Juan Manuel López Pazos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jualoppaz/cida/issues"
+  },
+  "homepage": "https://github.com/jualoppaz/cida#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "jwt-simple": "^0.5.1",
+    "method-override": "^2.3.7"
+  },
+  "devDependencies": {
+    "brunch": "^2",
+    "babel-brunch": "^6",
+    "postcss-brunch": "^2",
+    "sass-brunch": "^2",
+    "uglify-js-brunch": "^2",
+    "autoprefixer": "^6",
+    "babel-preset-react": "^6",
+    "babel-preset-latest": "^6"
+  }
+}

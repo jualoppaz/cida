@@ -1,0 +1,81 @@
+// mixins
+
+// ellipsis
+@mixin ellipsis(){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Añade prefijos
+@mixin prefix( $property, $value, $prefixes: () ) {
+  @each $prefix in $prefixes {
+    #{ '-' + $prefix + '-' + $property} : $value;
+  }
+
+  #{$property}: $value;
+}
+
+
+// Media queries
+// Máximos
+@mixin media_max( $media ) {
+  @if ( $media == desktop ) {
+    @media only screen and (max-width: $anchoEscritorio-minimo ) {
+      @content;
+    }
+  }
+  @else if ( $media == tablet ) {
+    @media only screen and (max-width: $anchoTablet-maximo ) {
+      @content;
+    }
+  }
+  @else if ( $media == phone ) {
+    @media only screen and (max-width: $anchoMovil-maximo ) {
+      @content;
+    }
+  }
+  @else {
+    @media only screen and ( #{$media} ) {
+      @content;
+    }
+  }
+}
+
+// Mínimos
+@mixin media_min( $media ) {
+  @if ( $media == desktop ) {
+    @media only screen and (min-width: $anchoEscritorio-minimo ) {
+      @content;
+    }
+  }
+  @else if ( $media == tablet ) {
+    @media only screen and (min-width: $anchoTablet-minimo ) {
+      @content;
+    }
+  }
+  @else if ( $media == phone ) {
+    @media only screen and (min-width: $anchoMovil-maximo ) {
+      @content;
+    }
+  }
+  @else {
+    @media only screen and ( #{$media} ) {
+      @content;
+    }
+  }
+}
+
+// Alto máximo
+@mixin media_maxH( $res ) {
+  @media only screen and (max-height: $res ) {
+    @content;
+  }
+}
+
+// Alto mínimo
+@mixin media_minH( $res ) {
+  @media only screen and (min-height: $res ) {
+    @content;
+  }
+}
