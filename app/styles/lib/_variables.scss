@@ -1,5 +1,110 @@
-// Estructura recomendada: $[pantalla]-[elemento]-[atributo]
+// Estructura recomendada: $pantalla-elemento-atributo
+
+
+// Rutas
+$uri-imagenes: "../imgs"; // Ejemplo de uso: url("#{$uri-imagenes}/bg_login.jpg")
+$uri-fuentes: "../fonts"; // Válido para fuentes e iconos
+
 
 // Colores
 $color-primary: #fff;
 $color-secondary: #0065bd;
+$color-secondary-inverted: #3db7e4;
+$color-grey: #dee0e3;
+$color-grey-v2: #d7e1e3;
+
+
+$color-content-background: $color-primary;
+$color-body-background: #d9eaf1;
+$color-default-text: #2f3a47;
+$color-light-text: #7a8591;
+$color-white-text: $color-primary;
+$color-link-default: $color-secondary;
+$color-link-hover: $color-secondary-inverted;
+$color-error: #c92b01;
+$color-default-border: #d7d7d7;
+$color-active-text: #7b8591;
+//$color-inactive-text: ;
+$color-marked: #f1ce2d;
+
+$color-active-firstLevel: $color-active-text;
+$color-active-secondLevel: #a8b5bb;
+
+
+
+
+// Tipografías
+// Por defecto se utiliza Roboto:
+// - Roboto-Regular con font-weight: 400 o normal
+// - Roboto-Light con font-weight: 300 o lighter
+// - Roboto-Bold con font-weight: 700 o bold
+$font-default:  'Roboto', sans-serif;
+$font-default-size: 15px;
+$font-header-paragraph: 12px;
+$font-default-weight: 300;
+
+$icon-default-size: 20px;
+
+
+// Bordes
+$border-default-radius: 0;
+$border-error: 1px solid $color-error;
+$border-default: 1px solid $color-default-border;
+$box-shadow-default: none;
+
+
+// Tamaños
+$body-height: 100vh;
+$body-max-height: 500px;
+$body-phone-padding: 30px;
+$box-default-padding: 1.5em;
+$textBox-default-margin: 0.4em 0;
+
+$footer-phone-height: 95px;
+$footer-tablet-height: 80px;
+$footer-desktop-height: 50px;
+
+$form-margin-bottom: 20px;
+$form-input-height: 45px;
+
+
+// Efectos
+$transition-default: all 0.2s;
+
+
+
+
+// ---------
+
+// $body-height: 100vh;
+
+$anchoMovil-maximo: 767px;
+$anchoTablet-minimo: 768px;
+$anchoTablet-maximo: 991px;
+$anchoEscritorio-minimo: 992px;
+
+$general-input-borde: 1px solid $color-grey;
+$general-input-fondo: $color-primary;
+$general-input-paddingLateral: 12px;
+$general-all-outline: 0;
+$general-all-colorFondoActivo: $color-active-text;
+$general-all-colorBordeActivo: $color-active-text;
+
+$header-enlace-fuente: 'Roboto';
+$header-enlace-size: 14px;
+$header-enlace-light: 300;
+$header-breadcrumbs-fontSize: 12px;
+
+$footer-enlace-margenVertical: 0;
+
+$vnav-vnav-paddingTop: 50px;
+$vnav-vnav-borderDerecho: $border-default;
+$vnav-vnav-ancho: 20rem;
+
+$header-header-height: 91px;
+
+$vnav-textos-fuente: $font-default;
+
+$letra-pequenia: 12px;
+$letra-label: 14px;
+$letra-color: $color-active-text;

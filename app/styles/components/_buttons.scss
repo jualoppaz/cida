@@ -1,0 +1,232 @@
+// Reemplazo de clases de bootstrap
+.btn {
+    border-radius: 0;
+  font-size: $font-default-size;
+  &:hover{
+    cursor: pointer;
+    .fa {
+      color: $color-primary;
+    }
+  }
+  &:focus{
+    color: $color-link-default;
+  }
+  &:active{
+    box-shadow: none;
+  }
+
+    &.btn-bordered{
+        border: 1px solid $color-secondary;
+        background-color: $color-primary;
+        color: $color-secondary;
+        .fa{
+            margin-right: 0.5em;
+            margin-top: 0.1em;
+        }
+        &:hover,&:focus{
+            border-color: $color-secondary-inverted;
+            background-color: $color-secondary-inverted;
+            color: $color-primary;
+            .fa{
+                color: $color-primary;
+            }
+        }
+    }
+
+}
+
+// Clases
+
+.btn-default{
+    &:active{
+        color: $color-primary;
+        background-color: $color-secondary;
+
+        &:hover{
+            background-color: $color-secondary-inverted;
+            color: $color-primary;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+}
+
+.btn-normal,
+.btn-event {
+  border-radius: $border-default-radius;
+  padding: 10px 25px;
+  border: none;
+  line-height: normal;
+  margin-top: 20px;
+  text-align: center;
+  background-color: $color-secondary;
+  color: $color-primary;
+}
+
+.btn-normal-inverted{
+  border-radius: $border-default-radius;
+  border: 1px solid $color-secondary;
+  padding: 10px 25px;
+  line-height: normal;
+  margin-top: 20px;
+  text-align: center;
+  background-color: $color-primary;
+  color: $color-secondary;
+
+  &:focus{
+      color: $color-secondary;
+      background-color: $color-primary;
+      border-color: $color-secondary;
+  }
+
+  &:hover, &:active{
+      color: $color-primary;
+      background-color: $color-secondary-inverted;
+      border-color: $color-secondary-inverted;
+  }
+
+  &:hover:active{
+      border-color: $color-secondary-inverted;
+  }
+}
+
+.btn-event{
+  border-radius: $border-default-radius;
+  border: 1px solid $color-secondary;
+  //width: 100%;
+  margin-bottom: 2em;
+  background: $color-primary;//#dee0e3;
+  color: $color-secondary;
+
+  &:hover{
+      background-color: $color-secondary-inverted !important;
+      color: $color-primary;
+      cursor: pointer;
+      text-decoration: none;
+  }
+
+  @include media_min(tablet){
+    min-width: 8em;//10em;
+    //width: auto;
+  }
+}
+
+.btn-normal {
+  width: 100%;
+
+  &:hover{
+      background-color: $color-secondary-inverted;// !important;
+      color: $color-primary;
+      cursor: pointer;
+      text-decoration: none;
+  }
+
+  &:focus{
+      color: $color-primary;
+      background-color: $color-secondary;
+  }
+
+  @include media_min(tablet){
+    min-width: 10em;
+    width: auto;
+  }
+
+  &.red{
+      background-color: $color-primary;
+      color: $color-secondary;
+
+      i{
+          font-size: 1.5em;
+          margin-right: 0.2em;
+      }
+
+      &:hover{
+          color: $color-secondary-inverted;
+      }
+  }
+}
+
+.btn-plus{
+    margin-top: 0;
+    min-width: 0;
+}
+
+.btn[disabled].btn-disabled{
+    opacity: 1;
+    background-color: #7b8591;
+
+    &:hover{
+        background-color: #7b8591;
+    }
+}
+
+.btn-normal {
+    &.btn-secondary {
+        background-color: transparent;
+        color: $color-secondary;
+        border: 1px solid $color-secondary;
+
+        &:hover {
+             color: $color-primary;
+             background-color: $color-secondary-inverted;
+             border: 1px solid $color-secondary-inverted;
+        }
+
+        &.btn-eliminar::before {
+            font-family: FontAwesome;
+            content: "\f014\00a0";
+        }
+        &.btn-editar::before {
+            font-family: FontAwesome;
+            content: "\f040\00a0";
+        }
+        &.btn-informe::before {
+            font-family: FontAwesome;
+            content: "\f0f6\00a0";
+        }
+    }
+}
+
+// ---------
+
+.input-group-btn{
+  .btn{
+    color: $color-link-default;
+    border-right: medium none;
+    border-top: medium none;
+    border-bottom: medium none;
+    &:focus,
+    &:hover,
+    &:active,
+    &:hover:active{
+      background-color: $color-primary;
+      .fa{
+        color: $color-secondary-inverted!important;
+      }
+    }
+  }
+  .btn.decorativo{
+    cursor: initial;
+    &:active,&:focus{
+      background-color: $color-primary;
+      box-shadow: none;
+      color: $color-secondary-inverted;
+    }
+  }
+}
+
+// .navbar-toggle {
+//   border: none;
+//   margin-top: 15px;
+// }
+// .btn-normal, .btn-event {
+//   border-radius: 0;
+//   padding: 10px 25px;
+//   outline: 0;
+//   border: none;
+//   line-height: normal;
+//   margin-top: 20px;
+//   text-align: center;
+//   background-color: #0065bd;
+//   color: white;
+// }

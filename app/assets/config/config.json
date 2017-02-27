@@ -1,0 +1,6 @@
+{
+  "apiBaseUrl": "http://localhost:3333/api/",
+  "timeout": 5000,
+  "baseUrl": "./",
+  "nombreApp": "CIDA"
+}
