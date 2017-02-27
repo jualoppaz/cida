@@ -4,3 +4,19 @@
 @import "lib/icons";
 @import "lib/fonts";
 @import "lib/global";
+
+// Componentes
+@import "components/buttons";
+@import "components/breadcrumbs";
+
+// Layouts
+@import "layouts/header";
+@import "layouts/vnav";
+@import "layouts/main";
+@import "layouts/footer";
+
+// Vistas
+
+
+// CSS necesario al final
+@import "lib/globalLasts";

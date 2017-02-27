@@ -2,9 +2,12 @@
   "name": "cida",
   "version": "1.0.0",
   "description": "Aplicación de ejemplo para la integración continua en aplicaciones AngularJS con Brunch, haciendo uso de JSHint o Sass, entre otras.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "brunch watch --server",
+    "test": "karma start ./karma.config.js",
+    "prod": "brunch build --production",
+    "postprod": "http-server public",
+    "postinstall": "brunch build --optimize"
   },
   "repository": {
     "type": "git",
@@ -30,13 +33,23 @@
     "method-override": "^2.3.7"
   },
   "devDependencies": {
-    "brunch": "^2",
-    "babel-brunch": "^6",
-    "postcss-brunch": "^2",
-    "sass-brunch": "^2",
-    "uglify-js-brunch": "^2",
-    "autoprefixer": "^6",
-    "babel-preset-react": "^6",
-    "babel-preset-latest": "^6"
+    "after-brunch": "0.0.5",
+    "angularjs-templates-brunch": "^1.0.0",
+    "auto-reload-brunch": "^2.7.1",
+    "clean-css-brunch": "^2.0.0",
+    "css-brunch": "^2.6.1",
+    "digest-brunch": "^1.5.1",
+    "http-proxy": "^1.14.0",
+    "http-server": "^0.9.0",
+    "jasmine-core": "^2.4.1",
+    "javascript-brunch": "^2.0.0",
+    "jshint-brunch": "^2.0.0",
+    "karma": "^1.2.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "less-brunch": "^2.6.0",
+    "sass-brunch": "^2.6.3",
+    "uglify-js-brunch": "^2.0.1"
   }
 }

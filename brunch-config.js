@@ -1,9 +1,9 @@
 exports.config = {
-    overrides: {
+    /*overrides: {
         production: {
             optimize: false
         }
-    },
+    },*/
     npm: {
         enabled: false
     },
@@ -18,8 +18,14 @@ exports.config = {
                 'app/app.js': 'js/app.js'
             },
             order: {
-                before: ['bower_components/jquery/dist/jquery.js', 'app/modules/definition.js'],
-                after: ['bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js', 'app/views/components/cargando/cargando.js', 'app/router.js', 'app/app.js']
+                before: [
+                    'bower_components/jquery/dist/jquery.js',
+                    'app/modules/definition.js'],
+                after: [
+                    'bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js',
+                    'app/views/components/cargando/cargando.js',
+                    'app/router.js',
+                    'app/app.js']
             }
         },
         stylesheets: {
@@ -57,7 +63,7 @@ exports.config = {
             alwaysRun: false,
             environments: ['production']
         },
-        afterBrunch: ['rm -f public/config/config_*.json'],
+        //afterBrunch: ['rm -f public/config/config_*.json'],
         uglify: {
             mangle: false
         }

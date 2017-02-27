@@ -1,0 +1,197 @@
+* {
+  // transition: $transition-default;
+  outline: 0;
+
+  &.word-break-all{
+    word-break: break-all;
+  }
+}
+
+html{
+  background-color: $color-primary;
+}
+
+html,
+body {
+  font-family: $font-default;
+  font-size: $font-default-size;
+  font-weight: $font-default-weight;
+}
+
+body {
+  color: $color-default-text;
+  background-color: $color-body-background;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+  color: $color-link-default;
+
+  &:hover {
+    color: $color-link-hover;
+    background-color: transparent;
+  }
+
+  &#url-externa {
+    text-decoration: underline;
+
+    &:hover{
+      color: $color-link-hover;
+    }
+  }
+
+  &.no-underlined {
+
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+
+  &#url-externa{
+    // Necesario para que las propiedades para evitar el desborde de texto funcionen
+    display: inline-block;
+
+    word-break: break-all;
+  }
+
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-default;
+}
+
+img {
+  max-width: 100%;
+}
+
+*{
+
+    &.visible{
+        display: block;
+    }
+
+    &.pointer{
+        cursor: pointer;
+    }
+
+    &.clear-both{
+        clear:both;
+    }
+
+    &.overflow-auto{
+        overflow: auto;
+    }
+
+    &.overflow-hidden{
+        overflow: hidden;
+    }
+
+    &.sin-borde{
+        border: 0;
+    }
+
+    &.bold{
+        font-weight: 700;
+    }
+
+    &.width100{
+        width: 100%;
+    }
+
+    &.widthAuto{
+        width: auto;
+    }
+}
+
+span{
+    &.vertical-align-middle{
+        vertical-align: middle;
+    }
+}
+
+hr{
+    &.separador-horizontal{
+        border-color: #d7d7d7;
+
+        &:first-of-type{
+            margin-top: 10px;
+            margin-bottom:5px;
+        }
+
+        &:last-of-type{
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        &.dashed{
+            border-style: dashed;
+        }
+    }
+}
+
+// Clases
+
+.seccion-info{
+    // margin-bottom: 3em;
+    .seccion-info-titulo{
+        text-overflow: ellipsis;
+        font-size: 18px;
+        margin-bottom: 2em;
+        overflow: hidden;
+    }
+    // >p{
+        // font-size: 18px;
+        // margin-bottom: 2em;
+    // }
+    &.inline{
+        @include media_min(phone){
+            .info-linea{
+                // width: 33%;
+                margin-right: 4em;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.info-linea{
+    >span:first-child{
+        color: $color-light-text;
+        display: block;
+        margin-bottom: 0.5em;
+    }
+    &.margin-bottom{
+        margin-bottom: 1em;
+    }
+}
+
+.block{
+    display: block;
+}
+
+.disable{
+    background-color: $color-grey-v2!important;
+    color: $color-light-text!important;
+    // pointer-events: none;
+    border: none!important;
+}
+
+#idioma-registro{
+    margin-bottom: 50px;
+}
+
+.row.reset-lateral-margin{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+div.botones-linea-superior{
+    margin-bottom: 20px;
+}

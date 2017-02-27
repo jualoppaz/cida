@@ -1,0 +1,29 @@
+<!-- Tecnologias de Integracion Continua -->
+<div id="ci-items">
+    <ul class="nav nav-pills nav-stacked">
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="home" data-ng-bind="'Inicio'"></a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="angular" data-ng-bind="'AngularJS'"></a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="brunch" data-ng-bind="'Brunch'"></a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="sass" data-ng-bind="'Sass'"></a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="node" data-ng-bind="'NodeJS'"></a>
+        </li>
+    </ul>
+</div>
+
+<!-- Tecnologias extra -->
+<div id="et-items">
+    <ul class="nav nav-pills nav-stacked">
+        <li data-ng-repeat="item in ctrl.menuET" role="presentation" ui-sref-active="active">
+            <a href="{{general.getURLByStateName(item.codigo)}}" data-ng-bind="item.titulo"></a>
+        </li>
+    </ul>
+</div>
