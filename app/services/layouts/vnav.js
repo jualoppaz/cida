@@ -5,9 +5,9 @@
     angular.module('vnav')
         .factory('vnav', vnavService);
 
-    vnavService.$inject = [];
+    vnavService.$inject = ['$http'];
 
-    function vnavService() {
+    function vnavService($http) {
 
         var service = {
             messages: {},
@@ -23,28 +23,13 @@
          */
         function getMenuCI() {
 
-            var res = {
-                "items": [
-                    {
-                        "codigo": "home",
-                        "titulo": "Inicio"
-                    },{
-                        "codigo": "angular",
-                        "titulo": "AngularJS"
-                    },{
-                        "codigo": "brunch",
-                        "titulo": "Brunch"
-                    },{
-                        "codigo": "sass",
-                        "titulo": "Sass"
-                    },{
-                        "codigo": "node",
-                        "titulo": "NodeJS"
-                    }
-                ]
-            };
-
-            return res;
+            return $http.get('/api/layouts/vnavs/CI')
+                .then(function(data){
+                    console.log("respuesta OK")
+                })
+                .catch(function(err){
+                    console.log("error");
+                });
         }
 
         /**

@@ -67,5 +67,11 @@ exports.config = {
         uglify: {
             mangle: false
         }
+    },
+    // Configuracion especifica del servidor NodeJS utilizado mediante Brunch
+    server: {
+        path: 'app.js',
+        port: 3333,
+        base: '/'
     }
 };

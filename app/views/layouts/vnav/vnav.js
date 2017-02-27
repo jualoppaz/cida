@@ -10,6 +10,8 @@
 
         var self = this;
 
+        vnav.getMenuCI();
+
     }
 
 })();

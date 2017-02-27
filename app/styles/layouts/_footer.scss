@@ -40,4 +40,12 @@ body {
   font-size: 0.8em;
   //min-height: $footer-phone-height;
 
+  p.text-muted{
+    color: $color-primary;
+
+    a{
+      color: $color-primary;
+    }
+  }
+
 }

@@ -9,8 +9,9 @@
     function controller(brunch){
         var self = this;
 
-        self.texto = brunch.getTexto();
+        var params = brunch.params;
 
+        self.logo = params.logo;
     }
 
 })();

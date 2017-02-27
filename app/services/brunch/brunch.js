@@ -14,24 +14,13 @@
      */
     function service(){
         var service = {
-            getTexto: getTexto
+            params: {
+                logo: 'images/tecnologia_brunch.png'
+            }
         };
 
         return service;
 
-        /**
-         * @ngdoc method
-         * @name getTexto
-         * @methodOf general.brunch
-         * @description Método para obtener el HTML que se visualizará en la página principal de la sección Brunch.
-         */
-        function getTexto(){
-            var html;
-
-            html = "<p>El Front-End de esta aplicación web se compila al completo con el framework Brunch.</p>";
-
-            return html;
-        }
     }
 
 })();
