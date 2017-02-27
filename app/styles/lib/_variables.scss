@@ -12,6 +12,7 @@ $color-secondary: #0065bd;
 $color-secondary-inverted: #3db7e4;
 $color-grey: #dee0e3;
 $color-grey-v2: #d7e1e3;
+$color-verde: #249E1E;
 
 
 $color-content-background: $color-primary;
@@ -26,6 +27,7 @@ $color-default-border: #d7d7d7;
 $color-active-text: #7b8591;
 //$color-inactive-text: ;
 $color-marked: #f1ce2d;
+$color-titulo-aplicacion: $color-verde;
 
 $color-active-firstLevel: $color-active-text;
 $color-active-secondLevel: #a8b5bb;
@@ -96,6 +98,7 @@ $header-enlace-light: 300;
 $header-breadcrumbs-fontSize: 12px;
 
 $footer-enlace-margenVertical: 0;
+$footer-height: 60px;
 
 $vnav-vnav-paddingTop: 50px;
 $vnav-vnav-borderDerecho: $border-default;

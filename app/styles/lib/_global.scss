@@ -20,20 +20,16 @@ body {
 
 body {
   color: $color-default-text;
-  background-color: $color-body-background;
+  //background-color: $color-body-background;
 }
 
 ul{
-    list-style: none;
-    padding: 0;
     margin: 0;
 }
 
 a {
-  color: $color-link-default;
 
   &:hover {
-    color: $color-link-hover;
     background-color: transparent;
   }
 

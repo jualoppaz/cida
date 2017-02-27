@@ -5,25 +5,32 @@
             <a ui-sref="home" data-ng-bind="'Inicio'"></a>
         </li>
         <li role="presentation" ui-sref-active="active">
-            <a ui-sref="angular" data-ng-bind="'AngularJS'"></a>
+            <a ui-sref="brunch" data-ng-bind="'Brunch'"></a>
         </li>
         <li role="presentation" ui-sref-active="active">
-            <a ui-sref="brunch" data-ng-bind="'Brunch'"></a>
+            <a ui-sref="npm" data-ng-bind="'NPM'"></a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="bower" data-ng-bind="'Bower'"></a>
         </li>
         <li role="presentation" ui-sref-active="active">
             <a ui-sref="sass" data-ng-bind="'Sass'"></a>
         </li>
         <li role="presentation" ui-sref-active="active">
-            <a ui-sref="node" data-ng-bind="'NodeJS'"></a>
+            <a ui-sref="angular" data-ng-bind="'AngularJS'"></a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="ndgocs" data-ng-bind="'ng-docs'"></a>
         </li>
     </ul>
 </div>
 
+<hr id="separador-tecnologias"/>
 <!-- Tecnologias extra -->
 <div id="et-items">
     <ul class="nav nav-pills nav-stacked">
-        <li data-ng-repeat="item in ctrl.menuET" role="presentation" ui-sref-active="active">
-            <a href="{{general.getURLByStateName(item.codigo)}}" data-ng-bind="item.titulo"></a>
+        <li role="presentation" ui-sref-active="active">
+            <a ui-sref="node" data-ng-bind="'NodeJS'"></a>
         </li>
     </ul>
 </div>

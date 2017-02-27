@@ -8,17 +8,17 @@
     config.$inject = ['$stateProvider'];
     function config($stateProvider) {
 
-        $stateProvider.state('angular', {
-            url: "/angular",
+        $stateProvider.state('npm', {
+            url: "/npm",
             views: {
                 'general': {
-                    templateUrl: "app/views/angular/angular.html",
-                    controller: 'AngularController as angular'
+                    templateUrl: "app/views/npm/npm.html",
+                    controller: 'NpmController as npm'
                 }
             },
             parent: 'layout',
             data: {
-                displayName: 'Angular'
+                displayName: 'NPM'
             },
             resolve: {}
         });

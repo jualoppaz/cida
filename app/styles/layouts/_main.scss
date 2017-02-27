@@ -1,4 +1,9 @@
 #main {
+
+  img.tecnologia-titulo{
+    width: 35px;
+    margin-top: -5px;
+  }
 }
 
 // --------- VIEJO
@@ -389,8 +394,8 @@ pre {
 
 #content {
   background-color: $color-body-background;
-//  width: 80%;
-    width: calc( 100% - #{$vnav-vnav-ancho});
+  width: calc( 100% - #{$vnav-vnav-ancho});
+  border-left: $border-default;
 }
 #content.content-width {
   width: 100%;
