@@ -1,28 +1,33 @@
-var express = require("express"),
-    app = express(),
-    bodyParser  = require("body-parser"),
-    methodOverride = require("method-override"),
-    path = require("path");
+var express, http, sysPath;
+express = require('express');
+sysPath = require('path');
+http = require('http');
+exports.startServer = function(port, path, callback) {
+    var app, server;
+    app = express();
+    app.use(express.static(path));
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(methodOverride());
-app.use(express.static(__dirname + '/app/public'));
+    var router = require('./express/router');
 
-var cadena_bbdd = "";
+    app.use(router);
 
-/*if(process.env.MONGOLAB_URL){
-    cadena_bbdd = process.env.MONGOLAB_URL;
-}else {
-    cadena_bbdd = 'mongodb://localhost/jmlp';
-}*/
+    app.all("/", function(req, res) {
+        return res.redirect('/index.html');
+    });
 
-var router = require('./server/router');
+    app.get("/docs*", function(req, res) {
+        return res.sendFile(sysPath.resolve(sysPath.join(path, "docs/index.html")));
+    });
 
-app.use(router);
+    app.all('/*', function(request, response) {
+        return response.sendFile(sysPath.resolve(sysPath.join(path, 'index.html')));
+    });
 
-var port = process.env.PORT || 3000;
+    server = http.createServer(app);
 
-app.listen(port, function() {
-    console.log("Node server running on http://localhost:", port);
-});
+    // Inicializacion alternativa en Heroku
+    port = process.env.port || port;
+
+    server.listen(parseInt(port, 10), callback);
+    return server;
+};
