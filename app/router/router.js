@@ -17,7 +17,7 @@
             views: {
                 'general': {
                     templateUrl: "app/views/home.html",
-                    controller: 'HomeController as ctrl'
+                    controller: 'HomeController as home'
                 }
             },
             parent: 'layout',
@@ -38,21 +38,39 @@
         $rootScope.$on('$stateChangeSuccess', stateChangeSuccess);
         function stateChangeSuccess(event, toState, toParams, fromState, fromParams){
 
-            angular.element(document).ready(function () {
-                var contentHeight = $("#content").css('height');
-
-                var menuHeight = $("#menu").css('height');
-
-                if(contentHeight < menuHeight){
-                    console.log("Modificamos la altura del content:", menuHeight);
-                    $("#content").height(menuHeight);
-                }
-            });
+            //angular.element(document).ready(onResize);
         }
+
         $rootScope.$on('$stateChangeError', stateChangeError);
         function stateChangeError(event, toState, toParams, fromState, fromParams, error){
 
         }
+
+        //$(window).resize(onResize);
     }
+
+    /*function onResize(){
+        var windowHeight = $(window).height();
+
+        var headerHeight = $("#header").height();
+
+        var contentHeight = $("#content").height();
+
+        var menuHeight = $("#menu").height();
+
+        var footerHeight = $("#footer").height();
+
+        var heightsSum = headerHeight + contentHeight + footerHeight;
+
+        console.log("Suma de alturas:", heightsSum);
+
+        if(heightsSum < windowHeight){ // Hay que modificar la altura del content
+
+            var newContentHeight = windowHeight - headerHeight - footerHeight;
+            console.log("Modificamos la altura del content:", menuHeight);
+            $("#content").height(newContentHeight);
+
+        }
+    }*/
 
 })();

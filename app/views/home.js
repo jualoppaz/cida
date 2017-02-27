@@ -4,17 +4,10 @@
 
     angular.module('general').controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'settings'];
+    HomeController.$inject = [];
 
-    function HomeController($scope, settings) {
-        var self = this;
-
-        $scope.baseUrl = settings.baseUrl;
-        $scope.nombreApp = settings.nombreApp;
-        $scope.tituloMiganPan = "";
-
-        $scope.formatoFecha = 'dd/MM/yyyy';
-        self.sinContenido = '---';
+    function HomeController() {
+        //var self = this;
     }
 
 })();

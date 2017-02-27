@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Aplicación de ejemplo para la integración continua en aplicaciones AngularJS con Brunch, haciendo uso de JSHint o Sass, entre otras.",
   "scripts": {
-    "start": "brunch watch --server",
+    "start": "brunch build && ngdocs && brunch watch --server",
     "test": "karma start ./karma.config.js",
     "prod": "brunch build --production",
     "postprod": "http-server public",
@@ -49,6 +49,7 @@
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.0.2",
     "less-brunch": "^2.6.0",
+    "ngdocs": "^0.1.0",
     "sass-brunch": "^2.6.3",
     "uglify-js-brunch": "^2.0.1"
   }

@@ -48,9 +48,51 @@
 
     /**
      * @ngdoc overview
+     * @name brunch
+     * @description Módulo asociado a la sección Brunch.
+     */
+    angular.module('general.brunch', []);
+
+    /**
+     * @ngdoc overview
+     * @name bower
+     * @description Módulo asociado a la sección Bower.
+     */
+    angular.module('general.bower', []);
+
+    /**
+     * @ngdoc overview
+     * @name node
+     * @description Módulo asociado a la sección NodeJS.
+     */
+    angular.module('general.node', []);
+
+    /**
+     * @ngdoc overview
+     * @name sass
+     * @description Módulo asociado a la sección Sass.
+     */
+    angular.module('general.sass', []);
+
+    /**
+     * @ngdoc overview
+     * @name npm
+     * @description Módulo asociado a la sección NPM.
+     */
+    angular.module('general.npm', []);
+
+    /**
+     * @ngdoc overview
      * @name general
      * @description Módulo en el que se incluirán las pantallas básicas de la aplicación.
      */
-    angular.module('general', ['general.angular']);
+    angular.module('general', [
+        'general.angular',
+        'general.brunch',
+        'general.node',
+        'general.sass',
+        'general.bower',
+        'general.npm'
+    ]);
 
 })();
