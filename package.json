@@ -7,7 +7,7 @@
     "test": "karma start ./karma.config.js",
     "prod": "brunch build --production",
     "postprod": "http-server public",
-    "postinstall": "brunch build --production"
+    "postinstall": "bower install && brunch build --production"
   },
   "repository": {
     "type": "git",
