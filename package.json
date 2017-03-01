@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Aplicación de ejemplo para la integración continua en aplicaciones AngularJS con Brunch, haciendo uso de JSHint o Sass, entre otras.",
   "scripts": {
-    "start": "brunch build && ngdocs && brunch watch --server",
+    "start": "bower install && brunch build && ngdocs && node server.js",
     "test": "karma start ./karma.config.js",
     "prod": "brunch build --production",
     "postprod": "http-server public",
-    "postinstall": "brunch build --optimize"
+    "postinstall": "brunch build --production"
   },
   "repository": {
     "type": "git",
@@ -27,17 +27,15 @@
   },
   "homepage": "https://github.com/jualoppaz/cida#readme",
   "dependencies": {
-    "body-parser": "^1.16.1",
-    "express": "^4.14.1",
-    "method-override": "^2.3.7"
-  },
-  "devDependencies": {
     "after-brunch": "0.0.5",
     "angularjs-templates-brunch": "^1.0.0",
     "auto-reload-brunch": "^2.7.1",
+    "body-parser": "^1.16.1",
+    "bower": "^1.8.0",
     "clean-css-brunch": "^2.0.0",
     "css-brunch": "^2.6.1",
     "digest-brunch": "^1.5.1",
+    "express": "^4.14.1",
     "http-proxy": "^1.14.0",
     "http-server": "^0.9.0",
     "jasmine-core": "^2.4.1",
@@ -48,6 +46,7 @@
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.0.2",
     "less-brunch": "^2.6.0",
+    "method-override": "^2.3.7",
     "ngdocs": "^0.1.0",
     "sass-brunch": "^2.6.3",
     "uglify-js-brunch": "^2.0.1"
