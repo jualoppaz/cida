@@ -32,6 +32,7 @@
     "auto-reload-brunch": "^2.7.1",
     "body-parser": "^1.16.1",
     "bower": "^1.8.0",
+    "brunch": "^2.10.8",
     "clean-css-brunch": "^2.0.0",
     "css-brunch": "^2.6.1",
     "digest-brunch": "^1.5.1",
