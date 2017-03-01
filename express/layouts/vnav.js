@@ -1,4 +1,4 @@
-module.exports = function(router){
+module.exports = function(app){
 
 
     function getCIItems(req, res){
@@ -22,6 +22,6 @@ module.exports = function(router){
 
     }
 
-    router.get('/api/layouts/vnavs/:section', getCIItems);
+    app.get('/api/layouts/vnavs/:section', getCIItems);
 
 };

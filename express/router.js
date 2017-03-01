@@ -1,21 +1,9 @@
 var express = require("express");
 var router = express.Router();
 
-// TODO: Importacion de rutas de los distintos modulos
-require('./layouts/vnav.js')(router);
+module.exports = function(app){
 
-function notFound(req, res){
-    res.status(404).send('not-found');
-}
+    // TODO: Importacion de rutas de los distintos modulos
+    require('./layouts/vnav.js')(app);
 
-function index(req, res){
-    res.redirect('/index.html');
-}
-
-router.get('/', index);
-
-router.get('/api/*', notFound);
-
-router.get('/*', notFound);
-
-module.exports = router;
+};

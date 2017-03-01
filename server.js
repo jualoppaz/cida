@@ -1,4 +1,4 @@
-var express, http, sysPath;
+var express, http, sysPath, statik;
 express = require('express');
 sysPath = require('path');
 http = require('http');
@@ -7,9 +7,7 @@ exports.startServer = function(port, path, callback) {
     app = express();
     app.use(express.static(path));
 
-    var router = require('./express/router');
-
-    app.use(router);
+    require('./express/router')(app);
 
     app.all("/", function(req, res) {
         return res.redirect('/index.html');
@@ -26,8 +24,19 @@ exports.startServer = function(port, path, callback) {
     server = http.createServer(app);
 
     // Inicializacion alternativa en Heroku
-    port = process.env.port || port;
+    port = port || 3333;
 
     server.listen(parseInt(port, 10), callback);
+
+    console.log("Arrancamos el servidor en el puerto:", port);
+
     return server;
 };
+
+var portHeroku = process.env.port;
+
+if(portHeroku){
+    exports.startServer(portHeroku, './public', function(err, res){
+        console.log("Servidor arrancado en Heroku correctamente en puerto:", portHeroku);
+    });
+}
