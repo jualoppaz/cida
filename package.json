@@ -2,8 +2,12 @@
   "name": "cida",
   "version": "1.0.0",
   "description": "Aplicación de ejemplo para la integración continua en aplicaciones AngularJS con Brunch, haciendo uso de JSHint o Sass, entre otras.",
+  "engines": {
+    "node": "6.10.0",
+    "npm": "3.10.10"
+  },
   "scripts": {
-    "start": "bower install && brunch build && ngdocs && node server.js",
+    "start": "ngdocs && node server.js",
     "test": "karma start ./karma.config.js",
     "prod": "brunch build --production",
     "postprod": "http-server public",
