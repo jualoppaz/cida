@@ -70,7 +70,7 @@ exports.config = {
     },
     // Configuracion especifica del servidor NodeJS utilizado mediante Brunch
     server: {
-        path: 'app.js',
+        path: 'server.js',
         port: 3333,
         base: '/'
     }

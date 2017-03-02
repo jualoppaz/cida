@@ -57,11 +57,6 @@
     border-right: $vnav-vnav-borderDerecho;
   }
 
-  span[class^="icon-ico-"]{
-    font-size: 1.4em;
-    vertical-align: middle;
-  }
-
 }
 
 .menu-1 {
@@ -74,43 +69,6 @@
 .menu-1.row span {
   padding: 0;
   margin-right: 0;
-}
-
-.accordion-dropdown .panel-body {
-  padding: 0;
-}
-
-.accordion-dropdown .panel-body ul {
-  padding: inherit;
-}
-
-.accordion-dropdown .panel-heading {
-  padding: 0;
-}
-
-.accordion-dropdown a {
-  display: block;
-  padding: 3px 20px;
-  clear: both;
-  font-weight: 400;
-  line-height: 1.42857143;
-  color: #0065bd;
-  white-space: normal;
-}
-
-.accordion-dropdown a:hover {
-  background-color: #3db7e4;
-  color: $color-white-text;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.accordion-dropdown a:active, .accordion-dropdown a:visited, .accordion-dropdown a:hover, .accordion-dropdown a:focus {
-  text-decoration: none;
-}
-
-.accordion-dropdown li > a {
-  padding: 3px 20px 3px 30px;
 }
 
 a[aria-expanded="true"] .up {
@@ -226,11 +184,6 @@ a[aria-expanded="true"] .down {
   text-decoration: none;
 }
 
-/* -------*/
-
-.accordion-status {
-  display: inline;
-}
 .panel-group {
   margin: 0;
 }
@@ -255,20 +208,7 @@ a[aria-expanded="true"] .down {
 #menuCerrado .panel-heading, #menuCerrado .list-group {
   background-color: #dee0e3;
 }
-#menuCerrado .item-icon {
-  display: block;
-  width: 100%;
-  padding: 15px 7%;
-  text-align: center;
-  margin-right: 0;
-}
-#menuCerrado .item-icon:hover {
-  background-color: #3db7e4;
-  color: $color-white-text;
-  cursor: pointer;
-  text-decoration: none;
-  cursor: default;
-}
+
 #menuCerrado span + div:not(.pull-right) {
   display: none;
   position: absolute;
@@ -308,11 +248,6 @@ a[aria-expanded="true"] .down {
   display: inline;
 }
 
-/* Nodos de primer nivel */
-
-div.accordions div.panel div.panel-heading:hover a, div.accordions div.panel div.panel-heading a:hover {
-  color: $color-white-text;
-}
 a.no-decoration:hover, a.no-decoration:focus {
   text-decoration: none;
 }
@@ -324,24 +259,6 @@ a.no-decoration {
   padding-left: 0;
   padding-right: 0;
 }
-div.accordions div.panel div.panel-heading a {
-  display: inline-block;
-  width: 100%;
-  outline: 0;
-  font-weight: 400;
-}
-div.accordions .panel-body, div.accordions .panel-heading {
-  padding: 0;
-}
-div.accordions .panel-title {
-  padding: 0;
-}
-
-/*div.accordions .panel-title > a {
-    padding: 10px;
-}*/
-
-/* Nodos de primer nivel activos */
 
 div.active {
     &:not(.third-level){
@@ -350,16 +267,6 @@ div.active {
           color: #fff;
         }
     }
-}
-
-/* Nodos de nivel 2 ó más*/
-
-div.accordions .panel-body .panel-group div.panel, div.accordions .panel-body .panel .panel-heading {
-  border-radius: 0;
-  padding: 0;
-}
-div.accordions .panel-body .panel-title {
-  padding: 0;
 }
 
 a.no-decoration{
@@ -380,125 +287,6 @@ a.no-decoration{
 
 }
 
-div.accordions{
-    // Sólo afecta a nodos de 1º nivel
-    .panel-heading{
-        h4 {
-            &.panel-title{
-
-                a > span > div {
-                    &.first-level{
-
-                        &:hover{
-                            background-color: #3db7e4;
-
-                            a, i.fa{
-                                color: $color-white-text;
-                            }
-                        }
-
-                        &:not(.actual-state){
-                            &.active{
-                                background-color: $color-active-firstLevel;
-
-                                &:hover{
-                                    background-color: #3db7e4;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    // Solo afecta a nodos de 2º y 3º nivel
-    .panel-body{
-        .panel-group{
-            div.panel{
-                &.second-level-accordion{
-                    div{
-                        &.panel-heading{
-                            div{
-
-                                &:hover{
-                                    background-color: #3db7e4;
-                                }
-                            }
-                        }
-                        &.second-level{
-
-                            &:hover{
-                                background-color: #3db7e4;
-                            }
-
-                            a{
-                                &:hover{
-                                      color: $color-white-text;
-                                }
-                            }
-                        }
-                    }
-                }
-
-
-                h4 {
-                  &.panel-title{
-
-                    a>span>div {
-                      &.first-level.active{
-                        background-color: $color-active-firstLevel;
-                      }
-                      &.second-level{
-                        a{
-                            padding-left: 2em;
-                        }
-
-                        &.active{
-                            background-color: $color-active-secondLevel;
-                        }
-                      }
-
-                      &.third-level{
-                          a{
-                              padding-left: 3em;
-                          }
-
-                          a{
-                              color: $color-light-text;
-
-                              &:hover{
-                                  color: $color-link-hover;
-                                  background-color: $color-content-background;
-                              }
-                          }
-
-                          &.active{
-
-                          }
-                      }
-                    }
-                  }
-                }
-            }
-        }
-    }
-}
-
-
-a.accordion-toggle {
-  padding: 0;
-}
-
-div.accordions .panel .panel-heading a.accordion-toggle span a,
-div.accordions .panel-body .panel .panel-heading a.accordion-toggle span a{
-    padding: 1.2em;
-}
-
-div.accordions .panel-body .panel .panel-heading a.accordion-toggle span a{
-    padding-left: 1.8em;
-}
-
 #menu {
   width: 80%;
 }
@@ -514,23 +302,4 @@ div.accordions .panel-body .panel .panel-heading a.accordion-toggle span a{
     width: $vnav-vnav-ancho;
     //min-height: $vnav-vnav-minHeightEscritorio;
   }
-}
-
-@media (max-width: 767px){
-  div.accordions .container-fluid > .navbar-collapse,
-  // .container-fluid > .navbar-header,
-  .container > .navbar-collapse,
-  .container > .navbar-header {
-    margin-left: 0;
-  }
-
-}
-
-
-#perfil-vnav{
-
-  &:hover{
-    cursor: pointer;
-  }
-
 }
