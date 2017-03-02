@@ -1,7 +1,6 @@
 #breadcrumbs {
 
   margin-bottom: 0;
-  //padding: 15px 3em;
   list-style: none;
   background-color: #ffffff;
   border-bottom: 1px solid #d7d7d7;
@@ -18,13 +17,6 @@
       background-color: white;
       border-radius: 0;
       padding: 15px 3em;
-
-
-      // CSS para evitar salto de línea en versión móvil
-
-      //white-space: nowrap;
-      //text-overflow: ellipsis;
-      //overflow: hidden;
 
       .active{
 

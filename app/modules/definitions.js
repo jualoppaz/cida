@@ -55,6 +55,13 @@
 
     /**
      * @ngdoc overview
+     * @name heroku
+     * @description Módulo asociado a la sección Heroku.
+     */
+    angular.module('general.heroku', []);
+
+    /**
+     * @ngdoc overview
      * @name bower
      * @description Módulo asociado a la sección Bower.
      */
@@ -92,7 +99,8 @@
         'general.node',
         'general.sass',
         'general.bower',
-        'general.npm'
+        'general.npm',
+        'general.heroku'
     ]);
 
 })();

@@ -6,165 +6,11 @@
   }
 }
 
-// --------- VIEJO
-
-.titulo-con-filtro{
-  border-bottom: $general-input-borde;
-  padding-bottom: 2em;
-}
-
-.my-hidden {
-  display: none;
-}
-
-.dropdown-menu {
-  padding: 0;
-}
-.dropdown-menu > li > a {
-  color: #0065bd;
-}
-.dropdown-menu > li > a:hover {
-  background-color: #3db7e4;
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-/* Mensajes de error */
-
-.alert-danger {
-  color: #c92b01;
-}
-.alert {
-  margin-bottom: 2em;
-}
-.label {
-  margin: 1em 0;
-  display: inline-block;
-  font-size: 1em;
-  font-weight: normal;
-  white-space: normal;
-}
-
-.label-danger {
-  display: block;
-  text-align: left;
-}
-.label-info {
-  background-color: #f6f6f6;
-  color: $color-default-text;
-  padding: 1em;
-}
-.label-info .glyphicon {
-  margin-right: 0.6em;
-  color: #7a8591;
-}
-
-/* Paginador */
-
-#paginator{
-  //font-size: $letra-pequenia;
-}
-
-.pagination > li:first-child > a, .pagination > li:last-child > a, .pagination {
-  border-radius: 0;
-}
-.pagination > li > a, .pagination > li > span {
-  color: #0065bd;
-}
-.pagination > li > a.current {
-  background-color: #7a8591;
-  color: white;
-}
-.pagination > li > a:hover {
-  background-color: #3db7e4;
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-}
-
 .limite span {
   margin-right: 8px;
 }
 .limite .dropdown-menu {
   top: 0;
-}
-.pagination {
-  margin: 3em 0 1em;
-}
-.pagination-container {
-  padding-top: 1em;
-}
-.pagination-container .resultados {
-  border-bottom: 1px solid #dee0e3;
-}
-
-.pagination-container .ocu-select {
-  width: 60px;
-}
-.pagination-container .paginate {
-  text-align: center;
-}
-
-/* Formularios */
-
-.normal-form .label-danger {
-  margin-bottom: 0;
-}
-
-.descarga {
-  margin: 1em 0;
-  display: block;
-}
-.descarga:hover .fa {
-  text-decoration: underline;
-}
-
-.normal-form .ocu-select {
-  width: 100%;
-}
-.form-title {
-  margin-bottom: 35px;
-}
-.form-title > div:last-child {
-  margin-top: 20px;
-}
-.normal-form.form-filtrar button {
-  outline: 0;
-  border: none;
-  background-color: white;
-  padding: 0.8em;
-  margin-left: 1%;
-  color: #0065bd;
-  border-radius: 0.2em;
-}
-.normal-form.form-filtrar button:hover {
-  background-color: #3db7e4;
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-}
-.normal-form.form-filtrar button:focus {
-  background-color: #7a8591;
-  color: white;
-  outline: none;
-}
-.normal-form.form-filtrar .form-control {
-  width: 60%;
-  display: inline;
-}
-.normal-form.form-filtrar label {
-  display: block;
-}
-
-/* Iconos formularios */
-
-.fa-folder-open-o{
-  color: #0065bd;
-  margin-left: 0.2em;
-  &:hover{
-    color: #3db7e4;
-  }
 }
 
 /* ------ Cargando ------- */
@@ -196,110 +42,6 @@
 .add-select+input {
   margin-top: 0.8em;
 }
-.ocu-select {
-  min-width: 100px;
-}
-.ocu-select .btn-text {
-  white-space: normal;
-  width: 80%;
-}
-.ocu-select label {
-  display: block;
-  color: #7a8591;
-}
-.ocu-select > button, .ocu-select > ul {
-  width: 100%;
-  border-radius: 0;
-}
-.ocu-select > ul {
-  margin-top: 0;
-  padding: 0;
-  min-width: inherit;
-}
-.ocu-select-icon {
-  width: 15%;
-  margin-top: 2px;
-}
-.ocu-select > button .glyphicon-menu-down, .ocu-select > button .glyphicon-menu-up {
-  text-align: right;
-}
-.ocu-select > button .glyphicon-menu-down {
-  display: inline;
-}
-.ocu-select > button .glyphicon-menu-up {
-  display: none;
-}
-.ocu-select > button .glyphicon-menu-down, .ocu-select > button .glyphicon-menu-up {
-  color: #0065bd;
-}
-.ocu-select.open > button .glyphicon-menu-down {
-  display: none;
-}
-.ocu-select.open > button .glyphicon-menu-up {
-  display: inline;
-}
-input[type=file]:not(.not-hide) {
-  /*  display: none;*/
-}
-.ocu-file {
-  width: 100%;
-}
-.ocu-file .input-group-addon {
-  width: 55%;
-  color: #7a8591;
-  background-color: white;
-  border-right: 1px solid #ccc;
-  text-align: left;
-}
-.ocu-file label {
-  color: #0065bd;
-  border: none;
-  box-shadow: none;
-  padding-left: 10%;
-  cursor: pointer;
-}
-.ocu-file label:hover {
-  text-decoration: underline;
-  /*  color: #23527c;*/
-  color: #3db8e4;
-}
-.ocu-file label:hover .fa {
-  text-decoration: underline;
-}
-.ocu-file img {
-  display: none;
-}
-.ocu-file.ocu-file-img span {
-  display: none;
-}
-.ocu-file.ocu-file-img img {
-  display: block;
-  max-width: 256px;
-}
-.ocu-file.ocu-file-img label {
-  padding-left: 0;
-}
-
-.form-group.split>label:first-child {
-  display: block;
-}
-
-.form-group.split>input.form-control {
-  display: inline-block;
-  width: initial;
-}
-.form-group.split .form-control:not(:first-of-type) {
-  padding-left: 3%;
-}
-.form-group.split button {
-  outline: 0;
-  border: none;
-  background-color: white;
-  color: #0065bd;
-}
-.form-group.split button:hover {
-  color: #3db7e4;
-}
 
 pre {
   display: block;
@@ -313,11 +55,6 @@ pre {
 
 .fa-1-5x{
   font-size: 1.5em;
-}
-
-.sin-padding-lateral{
-  padding-left: 0;
-  padding-right: 0;
 }
 
 [disabled]{
@@ -335,31 +72,6 @@ pre {
     outline: $general-all-outline !important;
   }
 }
-
-.pagination > .active > a{
-  background-color: $general-all-colorFondoActivo;
-  border-color: $general-all-colorBordeActivo;
-  &:focus, &:hover{
-    background-color: $general-all-colorFondoActivo;
-    border-color: $general-all-colorBordeActivo;
-  }
-}
-
-
-.pagination > .active > span{
-  background-color: $general-all-colorFondoActivo;
-  border-color: $general-all-colorBordeActivo;
-
-  &:focus, &:hover{
-    background-color: $general-all-colorFondoActivo;
-    border-color: $general-all-colorBordeActivo;
-  }
-}
-
-.pagination a.nonClickable{
-  pointer-events: none;
-}
-
 
 #toast-container > :hover{
   box-shadow: none;
@@ -455,25 +167,6 @@ pre {
       display: none;
     }
 
-    /* --- Inputs --- */
-    .ocu-file .input-group-addon {
-      width: 100%;
-      display: block;
-      padding: 1em;
-    }
-    .ocu-file label {
-      padding-left: 0;
-      margin-top: 1em;
-    }
-    .form-group.split>input.form-control {
-      width: 90%;
-    }
-    /* ------- Header ------- */
-
-    .option-mobile {
-      margin-right: 0;
-    }
-
     /* -------- Menu ------- */
     #menu {
       top: 0;
@@ -489,11 +182,6 @@ pre {
     }
     #menuAbierto .menu-depth-1 {
       width: inherit;
-    }
-
-    /*----selects----*/
-    .ocu-select {
-      width: 100%;
     }
     .dropdown-menu a {
       padding: 16px 16px!important;
@@ -540,10 +228,6 @@ pre {
       /*    border-top: 1px solid #dee0e3;*/
     }
 
-    /* ---------- Filtros ----------- */
-    .normal-form.form-filtrar .form-control {
-      width: 80%;
-    }
     /* ------ Tablas ------ */
     .tabla-normal {
       border: none;
@@ -696,18 +380,6 @@ pre {
 
 .white-background{
   background-color: white;
-}
-
-.opacity-background{
-  opacity: 0.8;
-}
-
-.separador-derecho{
-  border-right: 1px solid #d7d7d7;
-}
-
-.separador-izquierdo{
-  border-left: 1px solid #d7d7d7;
 }
 
 input[type=text]::-ms-clear {

@@ -72,11 +72,6 @@ img {
 }
 
 *{
-
-    &.visible{
-        display: block;
-    }
-
     &.pointer{
         cursor: pointer;
     }
@@ -100,75 +95,11 @@ img {
     &.bold{
         font-weight: 700;
     }
-
-    &.width100{
-        width: 100%;
-    }
-
-    &.widthAuto{
-        width: auto;
-    }
 }
 
 span{
     &.vertical-align-middle{
         vertical-align: middle;
-    }
-}
-
-hr{
-    &.separador-horizontal{
-        border-color: #d7d7d7;
-
-        &:first-of-type{
-            margin-top: 10px;
-            margin-bottom:5px;
-        }
-
-        &:last-of-type{
-            margin-top: 5px;
-            margin-bottom: 10px;
-        }
-
-        &.dashed{
-            border-style: dashed;
-        }
-    }
-}
-
-// Clases
-
-.seccion-info{
-    // margin-bottom: 3em;
-    .seccion-info-titulo{
-        text-overflow: ellipsis;
-        font-size: 18px;
-        margin-bottom: 2em;
-        overflow: hidden;
-    }
-    // >p{
-        // font-size: 18px;
-        // margin-bottom: 2em;
-    // }
-    &.inline{
-        @include media_min(phone){
-            .info-linea{
-                // width: 33%;
-                margin-right: 4em;
-                display: inline-block;
-            }
-        }
-    }
-}
-
-.info-linea{
-    >span:first-child{
-        color: $color-light-text;
-        display: block;
-        margin-bottom: 0.5em;
-    }
-    &.margin-bottom{
-        margin-bottom: 1em;
     }
 }
 
@@ -181,17 +112,4 @@ hr{
     color: $color-light-text!important;
     // pointer-events: none;
     border: none!important;
-}
-
-#idioma-registro{
-    margin-bottom: 50px;
-}
-
-.row.reset-lateral-margin{
-    margin-left: 0;
-    margin-right: 0;
-}
-
-div.botones-linea-superior{
-    margin-bottom: 20px;
 }
