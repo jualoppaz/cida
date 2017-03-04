@@ -22,8 +22,6 @@ exports.config = {
                     'bower_components/jquery/dist/jquery.js',
                     'app/modules/definition.js'],
                 after: [
-                    'bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js',
-                    'app/views/components/cargando/cargando.js',
                     'app/router.js',
                     'app/app.js']
             }
