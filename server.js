@@ -44,7 +44,7 @@ exports.startServer = function(port, path, callback) {
     return server;
 };
 
-var portHeroku = process.env.port;
+var portHeroku = process.env.PORT;
 
 console.log("Puerto en Heroku:", portHeroku);
 
