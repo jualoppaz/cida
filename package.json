@@ -11,7 +11,7 @@
     "test": "karma start ./karma.config.js",
     "prod": "brunch build --production",
     "postprod": "http-server public",
-    "postinstall": "bower install && brunch build --production"
+    "postinstall": "bower install && brunch build --production && ngdocs"
   },
   "repository": {
     "type": "git",
