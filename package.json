@@ -7,8 +7,9 @@
     "npm": "3.10.10"
   },
   "scripts": {
-    "start": "ngdocs && node server.js",
+    "start": "node server.js",
     "test": "karma start ./karma.config.js",
+    "docs": "ngdocs",
     "prod": "brunch build --production",
     "postprod": "http-server public",
     "postinstall": "bower install && brunch build --production"
