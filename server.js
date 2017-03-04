@@ -46,6 +46,8 @@ exports.startServer = function(port, path, callback) {
 
 var portHeroku = process.env.port;
 
+console.log("Puerto en Heroku:", portHeroku);
+
 if(portHeroku){
     /*exports.startServer(portHeroku, './public', function(err, res){
         console.log("Servidor arrancado en Heroku correctamente en puerto:", portHeroku);
