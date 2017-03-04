@@ -39,8 +39,6 @@ exports.startServer = function(port, path, callback) {
 
     server.listen(parseInt(port, 10), callback);
 
-    console.log("Arrancamos el servidor en el puerto:", port);
-
     return server;
 };
 
@@ -49,11 +47,7 @@ var portHeroku = process.env.PORT;
 console.log("Puerto en Heroku:", portHeroku);
 
 if(portHeroku){
-    /*exports.startServer(portHeroku, './public', function(err, res){
+    exports.startServer(portHeroku, './public', function(err, res){
         console.log("Servidor arrancado en Heroku correctamente en puerto:", portHeroku);
-    });*/
-
-    console.log("Vamos a lanzar el servidor en Heroku");
-
-    exports.startServer();
+    });
 }
