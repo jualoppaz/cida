@@ -1,6 +1,6 @@
 {
-  "outputDir": "public/docs/",
-  "contentDir": "public/docs/GuidesAndContents/",
-  "apiDir": "app",
-  "logoFile": "public/images/tecnologia_brunch.png"
+  "outputDir": "./public/docs/",
+  "contentDir": "./public/docs/GuidesAndContents/",
+  "apiDir": "./app",
+  "logoFile": "./public/images/tecnologia_brunch.png"
 }
