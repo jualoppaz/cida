@@ -6,7 +6,9 @@ exports.startServer = function(port, path, callback) {
     var app, server;
     app = express();
 
-    console.log("Ruta configurada en app:", path);
+    if(process.env.PORT){
+        console.log("Path recibido en Heroku:", path);
+    }
 
     app.use(express.static(path));
 
@@ -44,10 +46,16 @@ exports.startServer = function(port, path, callback) {
 
 var portHeroku = process.env.PORT;
 
-console.log("Puerto en Heroku:", portHeroku);
+console.log("Ruta actual del servidor:", __dirname);
 
 if(portHeroku){
-    exports.startServer(portHeroku, './public', function(err, res){
+    console.log("Puerto en Heroku:", portHeroku);
+
+    var directory = sysPath.resolve(sysPath.join(__dirname, "/public"));
+
+    console.log("Path enviado a servidor en Heroku:", directory);
+
+    exports.startServer(portHeroku, directory, function(err, res){
         console.log("Servidor arrancado en Heroku correctamente en puerto:", portHeroku);
     });
 }
