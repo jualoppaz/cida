@@ -9,10 +9,9 @@
   "scripts": {
     "start": "node server.js",
     "test": "karma start ./karma.config.js",
-    "docs": "ngdocs",
     "prod": "brunch build --production",
     "postprod": "http-server public",
-    "postinstall": "bower install && brunch build --production"
+    "postinstall": "bower install && brunch build --production && node node_modules/ngdocs/bin/ngdocs.js"
   },
   "repository": {
     "type": "git",
