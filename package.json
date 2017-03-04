@@ -7,11 +7,11 @@
     "npm": "3.10.10"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "ngdocs && node server.js",
     "test": "karma start ./karma.config.js",
     "prod": "brunch build --production",
     "postprod": "http-server public",
-    "postinstall": "bower install && brunch build --production && ngdocs"
+    "postinstall": "bower install && brunch build --production"
   },
   "repository": {
     "type": "git",
