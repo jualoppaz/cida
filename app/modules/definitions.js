@@ -48,6 +48,13 @@
 
     /**
      * @ngdoc overview
+     * @name jshint
+     * @description Módulo asociado a la sección JSHint.
+     */
+    angular.module('general.jshint', []);
+
+    /**
+     * @ngdoc overview
      * @name brunch
      * @description Módulo asociado a la sección Brunch.
      */
@@ -100,7 +107,8 @@
         'general.sass',
         'general.bower',
         'general.npm',
-        'general.heroku'
+        'general.heroku',
+        'general.jshint'
     ]);
 
 })();
