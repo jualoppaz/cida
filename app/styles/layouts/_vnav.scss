@@ -72,19 +72,3 @@
   }
 
 }
-
-a[aria-expanded="true"] .up {
-  display: inline;
-}
-
-a[aria-expanded="true"] .down {
-  display: none;
-}
-
-.navbar-default .navbar-nav > .open > a {
-  background-color: $color-white-text;
-}
-
-.navbar-default .navbar-nav > .open > a:focus {
-  background-color: #3db7e4;
-}

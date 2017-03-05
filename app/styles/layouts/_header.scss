@@ -60,22 +60,6 @@
           }
         }
       }
-
-      h2, h3 {
-
-        margin-top: 10px;
-
-        button {
-
-          &.navbar-toggle {
-            float: none;
-
-            @include media_max(tablet) {
-              display: inline-block;
-            }
-          }
-        }
-      }
     }
   }
 }
