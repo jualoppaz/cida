@@ -1,10 +1,5 @@
 * {
-  // transition: $transition-default;
   outline: 0;
-
-  &.word-break-all{
-    word-break: break-all;
-  }
 }
 
 * + p{
@@ -47,15 +42,4 @@ h3 {
 
 img {
   max-width: 100%;
-}
-
-.block{
-    display: block;
-}
-
-.disable{
-    background-color: $color-grey-v2!important;
-    color: $color-light-text!important;
-    // pointer-events: none;
-    border: none!important;
 }
