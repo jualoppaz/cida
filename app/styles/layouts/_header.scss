@@ -5,7 +5,8 @@
     margin: 0;
 
     .menu-button {
-      margin: 0px 0.5em;
+      margin: 0 0.5em;
+      padding: 0;
       color: $color-link-default;
       &:hover {
         .fa {
@@ -14,22 +15,10 @@
       }
     }
 
-    #titulo-movil {
-      font-family: $font-default;
-      font-weight: $font-default-weight;
-      margin-left: 0;
-      font-size: 1em;
-
-    }
-
     #header-title {
       h1 {
 
         overflow: auto;
-
-        @include media_max(phone) {
-          display: none;
-        }
 
         button {
 
@@ -89,113 +78,4 @@
       }
     }
   }
-}
-
-#header li a{
-  font-family: $header-enlace-fuente;
-  font-size: $header-enlace-size;
-  font-weight: $header-enlace-light;
-}
-
-.navbar-header span:not(.glyphicon) {
-  margin-left: 1em;
-  font-size: 1.5em;
-  vertical-align: middle;
-}
-
-.navbar-header a:hover {
-  text-decoration: none;
-}
-.navbar-header a:active {
-  text-decoration: none;
-  color: $color-default-text;
-}
-
-.header {
-  background-color: white;
-}
-
-.title {
-  display: inline;
-  bottom: 0;
-  position: absolute;
-  padding-left: 5%;
-  margin-bottom: 15px;
-}
-
-#right-menu-header li > a {
-  color: #0065bd;
-}
-
-.fa-bell-slash-o::before {
-    color: #7b8591;
-    display: block;
-    padding-top: 4px;
-}
-
-#right-menu-header li > a:focus,
-.nav .open > a {
-  color: $color-link-default;
-  background-color: #fff;
-}
-
-#right-menu-header li > a:hover {
-  background-color: transparent;
-  color: #3db7e4;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-/* Popup a la derecha de la cabecera */
-
-@media (max-width: 991px) {
-
-  .navbar-collapse {
-    border-top: 1px solid transparent;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  }
-  .navbar-collapse.collapse {
-    display: none!important;
-  }
-  .navbar-nav {
-    float: none!important;
-    margin: 7.5px -15px;
-  }
-  .navbar-nav>li {
-    float: none;
-  }
-  .navbar-nav>li>a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .navbar-text {
-    float: none;
-    margin: 15px 0;
-  }
-  /* since 3.1.0 */
-  .navbar-collapse.collapse.in {
-    display: block!important;
-  }
-  .collapsing {
-    overflow: hidden!important;
-  }
-}
-
-.navbar-default ul.navbar-nav.options > li > a, div#idiomas ul li a, li a span.caret{
-  color: #0065bd;
-  font-size: 14px;
-}
-
-.navbar-default ul.navbar-nav.options > li > a:hover, div#idiomas ul li a:hover, li a:hover span.caret{
-  color: #3db7e4;
-  background-color: transparent;
-}
-
-.navbar-default ul.navbar-nav.options > li > a:focus, li a:focus span.caret{
-  color: #7b8591;
-  background-color: transparent;
-}
-
-.navbar-default ul.navbar-nav.options > li > a:focus, div#idiomas ul li a:focus{
-  outline: 0;
 }

@@ -30,6 +30,7 @@
     "angular-bootstrap": "^2.5.0",
     "angular-ui-router": "^0.4.2",
     "angular-toastr": "^2.1.1",
-    "angular-utils-ui-breadcrumbs": "^0.2.2"
+    "angular-utils-ui-breadcrumbs": "^0.2.2",
+    "components-font-awesome": "^4.7.0"
   }
 }

@@ -2,12 +2,12 @@
 @import "lib/variables";
 @import "lib/mixins";
 @import "lib/icons";
-@import "lib/fonts";
+//@import "lib/fonts";
 @import "lib/global";
 
 // Componentes
-@import "components/buttons";
 @import "components/breadcrumbs";
+@import "components/toast";
 
 // Layouts
 @import "layouts/header";

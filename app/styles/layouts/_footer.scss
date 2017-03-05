@@ -8,31 +8,14 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: $footer-height;
 }
-.footer {
+
+#footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: $footer-height;
-  background-color: #f5f5f5;
-}
 
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
-.container {
-  width: auto;
-  max-width: 680px;
-  padding: 0 15px;
-}
-.container .text-muted {
-  margin: 20px 0;
-}
-
-
-#footer {
   background-color: $color-default-text;
   color: $color-white-text;
   text-align: center;
@@ -40,12 +23,18 @@ body {
   font-size: 0.8em;
   //min-height: $footer-phone-height;
 
-  p.text-muted{
-    color: $color-primary;
+  .container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
 
-    a{
+    p.text-muted{
+      margin: 20px 0;
       color: $color-primary;
+
+      a{
+        color: $color-primary;
+      }
     }
   }
-
 }

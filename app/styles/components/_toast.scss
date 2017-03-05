@@ -1,0 +1,10 @@
+#toast-container{
+  > div{
+    box-shadow: none;
+  }
+
+  > :hover{
+    box-shadow: none;
+    cursor: auto;
+  }
+}
