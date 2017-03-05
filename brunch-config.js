@@ -61,7 +61,10 @@ exports.config = {
             alwaysRun: false,
             environments: ['production']
         },
-        //afterBrunch: ['rm -f public/config/config_*.json'],
+        afterBrunch: [
+            'rm -f public/config/config_*.json',
+            'cp bower_components/components-font-awesome/fonts/* public/fonts'
+        ],
         uglify: {
             mangle: false
         }

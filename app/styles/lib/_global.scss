@@ -37,28 +37,6 @@ a {
     background-color: transparent;
   }
 
-  &#url-externa {
-    text-decoration: underline;
-
-    &:hover{
-      color: $color-link-hover;
-    }
-  }
-
-  &.no-underlined {
-
-    &:hover {
-      text-decoration: none !important;
-    }
-  }
-
-  &#url-externa{
-    // Necesario para que las propiedades para evitar el desborde de texto funcionen
-    display: inline-block;
-
-    word-break: break-all;
-  }
-
 }
 
 h1,
@@ -69,38 +47,6 @@ h3 {
 
 img {
   max-width: 100%;
-}
-
-*{
-    &.pointer{
-        cursor: pointer;
-    }
-
-    &.clear-both{
-        clear:both;
-    }
-
-    &.overflow-auto{
-        overflow: auto;
-    }
-
-    &.overflow-hidden{
-        overflow: hidden;
-    }
-
-    &.sin-borde{
-        border: 0;
-    }
-
-    &.bold{
-        font-weight: 700;
-    }
-}
-
-span{
-    &.vertical-align-middle{
-        vertical-align: middle;
-    }
 }
 
 .block{
