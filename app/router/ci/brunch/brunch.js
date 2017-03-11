@@ -8,15 +8,14 @@
     config.$inject = ['$stateProvider'];
     function config($stateProvider) {
 
-        $stateProvider.state('brunch', {
+        $stateProvider.state('ci.brunch', {
             url: "/brunch",
             views: {
-                'general': {
+                'general@layout': {
                     templateUrl: "app/views/brunch/brunch.html",
                     controller: 'BrunchController as brunch'
                 }
             },
-            parent: 'layout',
             data: {
                 displayName: 'Brunch'
             },

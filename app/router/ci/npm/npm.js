@@ -8,15 +8,14 @@
     config.$inject = ['$stateProvider'];
     function config($stateProvider) {
 
-        $stateProvider.state('npm', {
+        $stateProvider.state('ci.npm', {
             url: "/npm",
             views: {
-                'general': {
+                'general@layout': {
                     templateUrl: "app/views/npm/npm.html",
                     controller: 'NpmController as npm'
                 }
             },
-            parent: 'layout',
             data: {
                 displayName: 'NPM'
             },

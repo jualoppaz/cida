@@ -1,4 +1,46 @@
 <!-- Tecnologias de Integracion Continua -->
+<uib-accordion>
+    <div uib-accordion-group class="panel-default" is-open="vnav.open.ci">
+        <uib-accordion-heading>
+            <div class="first-level">
+
+                <a>
+                    Tecnologías CI
+                    <i
+                            class="pull-right glyphicon"
+                            data-ng-class="{
+                    'glyphicon-menu-down': vnav.open.ci,
+                    'glyphicon-menu-right': !vnav.open.ci
+                }">
+                    </i>
+                </a>
+            </div>
+
+        </uib-accordion-heading>
+        <!-- Tecnologias CI -->
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="ci.brunch" ui-sref-active="active">
+                            Brunch
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="ci.npm" ui-sref-active="active">
+                            NPM
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+        </uib-accordion>
+    </div>
+</uib-accordion>
+
 <div id="ci-items">
     <ul class="nav nav-pills nav-stacked">
         <li role="presentation" ui-sref-active="active">
