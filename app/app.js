@@ -23,7 +23,7 @@
 
     angular.module('app',
         [
-            'templates', 'ngSanitize', 'rutas', 'angularUtils.directives.uiBreadcrumbs', 'ui.bootstrap',
+            'templates', 'ngSanitize', 'ngAnimate', 'ngTouch', 'rutas', 'angularUtils.directives.uiBreadcrumbs', 'ui.bootstrap',
             'toastr', 'footer', 'general', 'hnav', 'vnav'
         ])
         .config(configuration)

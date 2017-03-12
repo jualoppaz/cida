@@ -5,7 +5,7 @@
     angular.module('rutas')
         .config(config);
 
-    config.$inject = [ '$stateProvider' ];
+    config.$inject = ['$stateProvider'];
     function config($stateProvider) {
 
         $stateProvider
@@ -25,7 +25,7 @@
                     },
                     'vnav@layout': {
                         templateUrl: 'app/views/layouts/vnav/vnav.html',
-                        controller: 'VnavCtrl as ctrl'
+                        controller: 'VnavCtrl as vnav'
                     },
                     'sub-container@layout': {
                         templateUrl: 'app/views/layouts/sub-container/sub-container.html'
