@@ -8,17 +8,16 @@
     config.$inject = ['$stateProvider'];
     function config($stateProvider) {
 
-        $stateProvider.state('sass', {
-            url: "/sass",
+        $stateProvider.state('et.node', {
+            url: "/node",
             views: {
-                'general': {
-                    templateUrl: "app/views/sass/sass.html",
-                    controller: 'SassController as sass'
+                'general@layout': {
+                    templateUrl: "app/views/et/node/node.html",
+                    controller: 'NodeController as node'
                 }
             },
-            parent: 'layout',
             data: {
-                displayName: 'Sass'
+                displayName: 'NodeJS'
             },
             resolve: {}
         });

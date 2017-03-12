@@ -2,8 +2,8 @@
 
     'use strict';
 
-    angular.module('general.sass')
-        .controller('SassController', controller);
+    angular.module('bower')
+        .controller('BowerController', controller);
 
     controller.$inject = [];
     function controller(){

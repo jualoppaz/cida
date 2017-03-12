@@ -8,17 +8,17 @@
     config.$inject = ['$stateProvider'];
     function config($stateProvider) {
 
-        $stateProvider.state('node', {
-            url: "/node",
+        $stateProvider.state('ci.bower', {
+            url: "/bower",
             views: {
                 'general': {
-                    templateUrl: "app/views/node/node.html",
-                    controller: 'NodeController as node'
+                    templateUrl: "app/views/ci/bower/bower.html",
+                    controller: 'BowerController as bower'
                 }
             },
             parent: 'layout',
             data: {
-                displayName: 'NodeJS'
+                displayName: 'Bower'
             },
             resolve: {}
         });

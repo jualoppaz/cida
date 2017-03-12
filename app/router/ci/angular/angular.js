@@ -8,17 +8,17 @@
     config.$inject = ['$stateProvider'];
     function config($stateProvider) {
 
-        $stateProvider.state('jshint', {
-            url: "/jshint",
+        $stateProvider.state('ci.angular', {
+            url: "/angular",
             views: {
                 'general': {
-                    templateUrl: "app/views/jshint/jshint.html",
-                    controller: 'JSHintController as jshint'
+                    templateUrl: "app/views/ci/angular/angular.html",
+                    controller: 'AngularController as angular'
                 }
             },
             parent: 'layout',
             data: {
-                displayName: 'JSHint'
+                displayName: 'Angular'
             },
             resolve: {}
         });

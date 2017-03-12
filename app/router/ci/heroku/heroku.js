@@ -8,17 +8,16 @@
     config.$inject = ['$stateProvider'];
     function config($stateProvider) {
 
-        $stateProvider.state('bower', {
-            url: "/bower",
+        $stateProvider.state('ci.heroku', {
+            url: "/heroku",
             views: {
-                'general': {
-                    templateUrl: "app/views/bower/bower.html",
-                    controller: 'BowerController as bower'
+                'general@layout': {
+                    templateUrl: "app/views/ci/heroku/heroku.html",
+                    controller: 'HerokuController as heroku'
                 }
             },
-            parent: 'layout',
             data: {
-                displayName: 'Bower'
+                displayName: 'Heroku'
             },
             resolve: {}
         });

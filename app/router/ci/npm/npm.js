@@ -12,7 +12,7 @@
             url: "/npm",
             views: {
                 'general@layout': {
-                    templateUrl: "app/views/npm/npm.html",
+                    templateUrl: "app/views/ci/npm/npm.html",
                     controller: 'NpmController as npm'
                 }
             },

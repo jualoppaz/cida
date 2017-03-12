@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('general.npm')
+    angular.module('npm')
         .controller('NpmController', controller);
 
     controller.$inject = ['$state'];

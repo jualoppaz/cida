@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('general.node')
+    angular.module('node')
         .controller('NodeController', controller);
 
     controller.$inject = ['nodeService'];

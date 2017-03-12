@@ -2,8 +2,8 @@
 
     'use strict';
 
-    angular.module('general.angular')
-        .controller('AngularController', controller);
+    angular.module('sass')
+        .controller('SassController', controller);
 
     controller.$inject = [];
     function controller(){

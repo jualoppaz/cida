@@ -2,8 +2,8 @@
 
     'use strict';
 
-    angular.module('general.bower')
-        .controller('BowerController', controller);
+    angular.module('angular')
+        .controller('AngularController', controller);
 
     controller.$inject = [];
     function controller(){

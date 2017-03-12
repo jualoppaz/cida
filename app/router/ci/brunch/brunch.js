@@ -12,7 +12,7 @@
             url: "/brunch",
             views: {
                 'general@layout': {
-                    templateUrl: "app/views/brunch/brunch.html",
+                    templateUrl: "app/views/ci/brunch/brunch.html",
                     controller: 'BrunchController as brunch'
                 }
             },

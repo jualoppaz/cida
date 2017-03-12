@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('general.heroku')
+    angular.module('heroku')
         .controller('HerokuController', controller);
 
     controller.$inject = ['herokuService'];

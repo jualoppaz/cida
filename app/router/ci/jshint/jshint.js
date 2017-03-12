@@ -8,17 +8,16 @@
     config.$inject = ['$stateProvider'];
     function config($stateProvider) {
 
-        $stateProvider.state('heroku', {
-            url: "/heroku",
+        $stateProvider.state('ci.jshint', {
+            url: "/jshint",
             views: {
-                'general': {
-                    templateUrl: "app/views/heroku/heroku.html",
-                    controller: 'HerokuController as heroku'
+                'general@layout': {
+                    templateUrl: "app/views/ci/jshint/jshint.html",
+                    controller: 'JSHintController as jshint'
                 }
             },
-            parent: 'layout',
             data: {
-                displayName: 'Heroku'
+                displayName: 'JSHint'
             },
             resolve: {}
         });

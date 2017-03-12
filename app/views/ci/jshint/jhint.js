@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('general.jshint')
+    angular.module('jshint')
         .controller('JSHintController', controller);
 
     controller.$inject = ['jshintService'];

@@ -2,13 +2,13 @@
 
     'use strict';
 
-    angular.module('general.heroku').factory('herokuService', service);
+    angular.module('heroku').factory('herokuService', service);
 
     service.$inject = [];
 
     /**
      * @ngdoc service
-     * @name general.heroku
+     * @name heroku.heroku
      * @description
      * Servicio que contendrá todas las operaciones necesarias relacionadas con la sección Heroku.
      */

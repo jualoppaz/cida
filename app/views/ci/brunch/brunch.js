@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('general.brunch')
+    angular.module('brunch')
         .controller('BrunchController', controller);
 
     controller.$inject = ['brunchService'];
