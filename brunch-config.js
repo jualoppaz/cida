@@ -63,7 +63,8 @@ exports.config = {
         },
         afterBrunch: [
             'rm -f public/config/config_*.json',
-            'cp bower_components/components-font-awesome/fonts/* public/fonts'
+            'cp bower_components/components-font-awesome/fonts/* public/fonts',
+            'cp bower_components/bootstrap/fonts/* public/fonts'
         ],
         uglify: {
             mangle: false

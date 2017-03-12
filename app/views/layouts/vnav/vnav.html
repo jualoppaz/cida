@@ -1,55 +1,150 @@
 <!-- Tecnologias de Integracion Continua -->
-<div id="ci-items">
-    <ul class="nav nav-pills nav-stacked">
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="home" data-ng-bind="'Inicio'"></a>
-        </li>
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="brunch" data-ng-bind="'Brunch'"></a>
-        </li>
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="npm" data-ng-bind="'NPM'"></a>
-        </li>
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="bower" data-ng-bind="'Bower'"></a>
-        </li>
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="sass" data-ng-bind="'Sass'"></a>
-        </li>
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="angular" data-ng-bind="'AngularJS'"></a>
-        </li>
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="jshint" data-ng-bind="'JSHint'"></a>
-        </li>
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="ndgocs" data-ng-bind="'ng-docs'"></a>
-        </li>
-    </ul>
-</div>
+<uib-accordion>
+    <div uib-accordion-group class="panel-default" is-open="vnav.open.ci">
+        <uib-accordion-heading>
+            <div class="first-level">
+
+                <a>
+                    Tecnologías CI
+                    <i
+                            class="pull-right glyphicon"
+                            data-ng-class="{
+                    'glyphicon-menu-down': vnav.open.ci,
+                    'glyphicon-menu-right': !vnav.open.ci
+                }">
+                    </i>
+                </a>
+            </div>
+
+        </uib-accordion-heading>
+        <!-- Tecnologias CI -->
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="ci.brunch" ui-sref-active="active">
+                            Brunch
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="ci.npm" ui-sref-active="active">
+                            NPM
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="ci.bower" ui-sref-active="active">
+                            Bower
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="ci.sass" ui-sref-active="active">
+                            Sass
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="ci.angular" ui-sref-active="active">
+                            AngularJS
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="ci.jshint" ui-sref-active="active">
+                            JSHint
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="ci.ngdocs" ui-sref-active="active">
+                            ng-docs
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="ci.heroku" ui-sref-active="active">
+                            Heroku
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+        </uib-accordion>
+    </div>
+</uib-accordion>
 
 <hr class="separador-tecnologias"/>
-<!-- Tecnologias extra -->
-<div id="et-items">
-    <ul class="nav nav-pills nav-stacked">
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="node" data-ng-bind="'NodeJS'"></a>
-        </li>
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="sequelize" data-ng-bind="'SequelizeJS'"></a>
-        </li>
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="postgre" data-ng-bind="'PostgreSQL'"></a>
-        </li>
-    </ul>
-</div>
 
-<hr class="separador-tecnologias"/>
+<!-- Tecnologias Extra -->
+<uib-accordion>
+    <div uib-accordion-group class="panel-default" is-open="vnav.open.et">
+        <uib-accordion-heading>
+            <div class="first-level">
 
-<div>
-    <ul class="nav nav-pills nav-stacked">
-        <li role="presentation" ui-sref-active="active">
-            <a ui-sref="heroku" data-ng-bind="'Heroku'"></a>
-        </li>
-    </ul>
-</div>
+                <a>
+                    Tecnologías Extra
+                    <i
+                            class="pull-right glyphicon"
+                            data-ng-class="{
+                                'glyphicon-menu-down': vnav.open.et,
+                                'glyphicon-menu-right': !vnav.open.et
+                            }">
+                    </i>
+                </a>
+            </div>
+
+        </uib-accordion-heading>
+        <!-- Tecnologias ET -->
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="et.node" ui-sref-active="active">
+                            NodeJS
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="et.sequelize" ui-sref-active="active">
+                            SequelizeJS
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+            <div uib-accordion-group class="panel-default" is-disabled="true">
+                <uib-accordion-heading>
+                    <div class="second-level">
+                        <a ui-sref="et.postgre" ui-sref-active="active">
+                            PostgreSQL
+                        </a>
+                    </div>
+                </uib-accordion-heading>
+            </div>
+        </uib-accordion>
+    </div>
+</uib-accordion>
