@@ -55,4 +55,4 @@ had created.
 
 With Brunch and other plugins we can compile all our app JS files generating a unique js file, which we must include in our index.html.
 
-I think it's uncredible, ¿don't you?
+I think it's incredible, don't you?
