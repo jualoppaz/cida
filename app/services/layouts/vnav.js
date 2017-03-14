@@ -3,11 +3,17 @@
     'use strict';
 
     angular.module('vnav')
-        .factory('vnav', vnavService);
+        .factory('vnav', service);
 
-    vnavService.$inject = ['$http'];
+    service.$inject = ['$http'];
 
-    function vnavService($http) {
+    /**
+     * @ngdoc service
+     * @name vnav.vnav
+     * @description
+     * Servicio que contendrá todas las operaciones necesarias relacionadas con el menú lateral.
+     */
+    function service($http) {
 
         var service = {
             messages: {},
@@ -25,7 +31,7 @@
 
             return $http.get('/api/layouts/vnavs/CI')
                 .then(function(data){
-                    console.log("respuesta OK")
+                    console.log("respuesta OK");
                 })
                 .catch(function(err){
                     console.log("error");

@@ -2,13 +2,13 @@
 
     'use strict';
 
-    angular.module('general.brunch').factory('brunchService', service);
+    angular.module('brunch').factory('brunchService', service);
 
     service.$inject = [];
 
     /**
      * @ngdoc service
-     * @name general.brunch
+     * @name brunch.brunch
      * @description
      * Servicio que contendrá todas las operaciones necesarias relacionadas con la sección Brunch.
      */

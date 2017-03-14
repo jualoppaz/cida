@@ -61,6 +61,83 @@
       border-radius: 0;
 
     }
+
+    uib-accordion{
+
+      div.panel-group{
+
+        margin-bottom: 0;
+
+        div.panel-default{
+
+          box-shadow: none;
+
+          div.panel-heading{
+
+            padding: 0;
+
+            background-color: $color-primary;
+
+            h4.panel-title{
+              a{
+
+                border-radius: 4px;
+
+                padding: 0;
+
+                display: block;
+
+                color: $color-vnav;
+
+                &:hover, &:focus{
+                  text-decoration: none;
+                  outline: none;
+                }
+
+                span{
+                  &.text-muted{
+                    color: $color-vnav;
+                  }
+
+                  div{
+
+                    &.first-level{
+                      a{
+                        padding: 10px 15px 10px;
+                      }
+                    }
+
+                    &.second-level{
+                      a{
+                        padding: 10px 30px 10px;
+                      }
+                    }
+
+                    a{
+                      &.active{
+                        background-color: $color-vnav;
+                        color: $color-primary;
+                      }
+                    }
+                  }
+                }
+
+              }
+            }
+          }
+
+          div.panel-collapse{
+
+            pading: 0;
+
+            div.panel-body{
+              padding: 0;
+
+            }
+          }
+        }
+      }
+    }
   }
 
   a{

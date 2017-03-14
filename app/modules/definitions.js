@@ -44,56 +44,56 @@
      * @name angular
      * @description Módulo asociado a la sección AngularJS.
      */
-    angular.module('general.angular', []);
+    angular.module('angular', []);
 
     /**
      * @ngdoc overview
      * @name jshint
      * @description Módulo asociado a la sección JSHint.
      */
-    angular.module('general.jshint', []);
+    angular.module('jshint', []);
 
     /**
      * @ngdoc overview
      * @name brunch
      * @description Módulo asociado a la sección Brunch.
      */
-    angular.module('general.brunch', []);
+    angular.module('brunch', []);
 
     /**
      * @ngdoc overview
      * @name heroku
      * @description Módulo asociado a la sección Heroku.
      */
-    angular.module('general.heroku', []);
+    angular.module('heroku', []);
 
     /**
      * @ngdoc overview
      * @name bower
      * @description Módulo asociado a la sección Bower.
      */
-    angular.module('general.bower', []);
+    angular.module('bower', []);
 
     /**
      * @ngdoc overview
      * @name node
      * @description Módulo asociado a la sección NodeJS.
      */
-    angular.module('general.node', []);
+    angular.module('node', []);
 
     /**
      * @ngdoc overview
      * @name sass
      * @description Módulo asociado a la sección Sass.
      */
-    angular.module('general.sass', []);
+    angular.module('sass', []);
 
     /**
      * @ngdoc overview
      * @name npm
      * @description Módulo asociado a la sección NPM.
      */
-    angular.module('general.npm', []);
+    angular.module('npm', []);
 
     /**
      * @ngdoc overview
@@ -101,14 +101,14 @@
      * @description Módulo en el que se incluirán las pantallas básicas de la aplicación.
      */
     angular.module('general', [
-        'general.angular',
-        'general.brunch',
-        'general.node',
-        'general.sass',
-        'general.bower',
-        'general.npm',
-        'general.heroku',
-        'general.jshint'
+        'angular',
+        'brunch',
+        'node',
+        'sass',
+        'bower',
+        'npm',
+        'heroku',
+        'jshint'
     ]);
 
 })();
