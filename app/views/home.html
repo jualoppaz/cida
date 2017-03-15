@@ -1,46 +1,60 @@
 <h1 class="text-center">Bienvenido a CIDA: Continuous Integration Demo App</h1>
 
-<p>Ésta es una aplicación web que he creado para poner en práctica tecnologías relacionadas con la Integración Continua,
-    además de otras tantas relacionadas con el Desarrollo Ágil de aplicaciones Web en <a ui-sref="angular">AngularJS</a>.</p>
+<p>
+    Ésta es una aplicación web que he creado para poner en práctica tecnologías relacionadas con la Integración Continua,
+    además de otras tantas relacionadas con el Desarrollo Ágil de aplicaciones Web en <a ui-sref="angular">AngularJS</a>.
+</p>
 
-<p>En el lado de las tecnologías para la Integración Continua, las que han motivado el desarrollo de esta aplicación web, tenemos: </p>
+<p>
+    En el lado de las tecnologías para la Integración Continua, las que han motivado el desarrollo de esta aplicación web, tenemos:
+</p>
 <ul>
     <li>
-        <a ui-sref="brunch">Brunch</a>
+        <a data-ng-href="{{general.getURLByScreenName('brunch')}}">Brunch</a>
     </li>
     <li>
-        <a ui-sref="npm">NPM</a>
+        <a data-ng-href="{{general.getURLByScreenName('npm')}}">NPM</a>
     </li>
     <li>
-        <a ui-sref="bower">Bower</a>
+        <a data-ng-href="{{general.getURLByScreenName('bower')}}">Bower</a>
     </li>
     <li>
-        <a ui-sref="sass">Sass</a>
+        <a data-ng-href="{{general.getURLByScreenName('sass')}}">Sass</a>
     </li>
     <li>
-        <a ui-sref="angular">AngularJS</a>
+        <a data-ng-href="{{general.getURLByScreenName('angular')}}">AngularJS</a>
     </li>
     <li>
-        <a ui-sref="ngdocs">ng-docs</a>
+        <a data-ng-href="{{general.getURLByScreenName('ngdocs')}}">ng-docs</a>
     </li>
 </ul>
 
-<p>Aprovechando la ocasión he introducido una serie de tecnologías con las que deseaba experimentar en este tipo de Arquitecturas.
-    Dichas tecnologías son:</p>
+<p>
+    Aprovechando la ocasión he introducido una serie de tecnologías con las que deseaba experimentar en este tipo de Arquitecturas.
+    Dichas tecnologías son:
+</p>
 <ul>
     <li>
-        <a ui-sref="node">NodeJS</a>
+        <a data-ng-href="{{general.getURLByScreenName('node')}}">NodeJS</a>
     </li>
     <li>
-        <a ui-sref="sequelize">SequelizeJS</a>
+        <a data-ng-href="{{general.getURLByScreenName('sequelize')}}">SequelizeJS</a>
     </li>
     <li>
-        <a ui-sref="postgre">PostgreSQL</a>
+        <a data-ng-href="{{general.getURLByScreenName('postgre')}}">PostgreSQL</a>
     </li>
 </ul>
 
-<p>A todas estas tecnologías hay que sumarle el hecho de que el despliegue lo voy a realizar en <a ui-sref="heroku">Heroku</a>.</p>
-<p>En una instalación de un Apache en un servidor propio sólo tendríamos que compilar el proyecto y realizar el despliegue sobre el
-    servidor, para lo que se suelen utilizar herramientas como Jenkins o Travis.</p>
-<p>Sin embargo, para hacer uso de <a ui-sref="heroku">Heroku</a> habrá que realizar una serie de configuraciones específicas para
-    admitir esta propuesta de solución para la Integración Continua para aplicaciones Web con <a ui-sref="angular">AngularJS</a>.</p>
+<p>
+    A todas estas tecnologías hay que sumarle el hecho de que el despliegue lo voy a realizar en
+    <a data-ng-href="{{general.getURLByScreenName('heroku')}}">Heroku</a>.
+</p>
+<p>
+    En una instalación de un Apache en un servidor propio sólo tendríamos que compilar el proyecto y realizar el despliegue sobre el
+    servidor, para lo que se suelen utilizar herramientas como Jenkins o Travis.
+</p>
+<p>
+    Sin embargo, para hacer uso de <a data-ng-href="{{general.getURLByScreenName('heroku')}}">Heroku</a> habrá que realizar una
+    serie de configuraciones específicas para admitir esta propuesta de solución para la Integración Continua para aplicaciones
+    Web con <a data-ng-href="{{general.getURLByScreenName('angular')}}">AngularJS</a>.
+</p>

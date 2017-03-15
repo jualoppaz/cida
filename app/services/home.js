@@ -13,13 +13,6 @@
 
         return service;
 
-        function getTexto(){
-            var html;
-
-
-
-            return html;
-        }
     }
 
 })();

@@ -6,30 +6,23 @@
 
         .controller('GeneralCtrl', GeneralCtrl);
 
-    GeneralCtrl.$inject = ['$scope', '$rootScope', 'settings', '$state'];
+    GeneralCtrl.$inject = ['$scope', '$rootScope', 'settings', '$state', 'generalService'];
 
-    function GeneralCtrl($scope, $rootScope, settings, $state) {
+    function GeneralCtrl($scope, $rootScope, settings, $state, general) {
         var self = this;
 
-        $scope.baseUrl = settings.baseUrl;
         $scope.nombreApp = settings.nombreApp;
-        $scope.nombreEmpresa = settings.nombreEmpresa;
-        $scope.tituloMiganPan = "";
 
-        $scope.formatoFecha = 'dd/MM/yyyy';
-        self.sinContenido = '---';
-
-        // Estas variables se actualizarán desde los estados login y home
-        $rootScope.version = "";
-        $rootScope.buildNumber = "";
-        $rootScope.diaActivoCalendario = null;
-
-        self.getEstadoActual = function(){
-            return $state.current.name;
+        self.getActualState = function(){
+            return general.getActualState();
         };
 
-        self.getURLByStateName = function(name){
-            return $state.href(name);
+        self.getURLByScreenName = function(screen){
+            return general.getURLByScreenName(screen);
+        };
+
+        self.getStateNameByScreen = function(screen){
+            return general.getStateNameByScreen(screen);
         };
 
     }
