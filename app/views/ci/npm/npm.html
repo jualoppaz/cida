@@ -6,3 +6,17 @@
     Para la definición de dependencias de las herramientas necesarias para la compilación del proyecto se utiliza NPM, lo cual se
     realiza en el fichero Package.json
 </p>
+<p>
+    NPM tendrá un papel fundamental ya que a través de esta herramienta arrancaremos nuestra aplicación web, no sin antes descargar
+    todas las herramientas necesarias que se indican como dependencias.
+</p>
+<p>
+    El primer script relevante que hemos definido es el llamado "postinstall":
+</p>
+<pre>
+    "scripts": {
+        ...
+        "postinstall": "bower install && brunch build --production && node node_modules/ngdocs/bin/ngdocs.js"
+        ...
+    }
+</pre>
