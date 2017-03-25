@@ -1,0 +1,59 @@
+<h1>
+    ng-docs
+</h1>
+<p>
+    Para la documentación del código del Frontend de esta aplicación se utiliza la herramienta ng-docs y se puede consultar en el
+    siguiente <a data-ng-href="/docs" target="_blank">enlace</a>.
+</p>
+<p>
+    Para hacer uso de esta herramienta tenemos que documentar nuestros módulos, controladores, servicios, métodos y otros elementos
+    de <a data-ng-href="{{general.getURLByScreenName('angular')}}">AngularJS</a> mediante la sintaxis JSDoc.
+</p>
+<p>
+    Antes de generar la documentación es probable que necesitemos modificar la configuración por defecto de la herramienta. La
+    configuración debe indicarse en un fichero llamado <b>docsConfig.json</b> situado en la raíz de nuestro proyecto. La configuración
+    específica de este proyecto es la siguiente:
+</p>
+<pre>
+    {
+        "outputDir": "./public/docs/",
+        "contentDir": "./public/docs/GuidesAndContents/",
+        "apiDir": "./app",
+        "logoFile": "./public/images/tecnologia_brunch.png"
+    }
+</pre>
+<p>
+    Con esta configuración, ngdocs recorrerá todos los ficheros situados en la carpeta <b>app</b> y generará los ficheros html
+    con la documentación correspondiente, la cual podremos encontrar en el directorio <b>public/docs</b> y la imagen
+    <b>tecnologia_brunch.png</b> situada en <b>public/images</b> como la imagen principal de la página.
+</p>
+<p>
+    Hecho esto, lo ideal es que la documentación de nuestro código se genere automáticamente en cada despliegue de nuestra aplicación.
+    Para ello, se hará uso del siguiente comando:
+</p>
+<pre>
+    $ node node_modules/ngdocs/bin/ngdocs
+</pre>
+<p>
+    Con lo explicado anteriormente debería bastar, pero he optado por hacer pequeñas modificaciones para perfeccionar la documentación
+    generada. La plantilla por defecto contiene enlaces en el menú principal y en el footer que redirigen a páginas oficiales de
+    AngularJS. Por tanto, he añadido una versión modificada del <b>index.html</b> utilizado en la carpeta <b>assets/public/docs</b>.
+</p>
+<p>
+    Las modificaciones realizadas han sido las siguientes:
+</p>
+<ul>
+    <li>
+        Eliminación de enlaces supérfluos en el menú principal y en el footer.
+    </li>
+    <li>
+        Referencia al enlace de la librería en GitHub.
+    </li>
+    <li>
+        Corrección de enlaces autogenerados con protocolo <b>http</b> que en la actualidad utilizan <b>https</b>.
+    </li>
+</ul>
+<p>
+    Es importante que antes de generar nuestra documentación estemos seguros de que existe la carpeta <b>public</b>, ya que
+    <b>ngdocs</b> no crea el directorio en el caso de que no exista y fallará al intentar generar la documentación.
+</p>

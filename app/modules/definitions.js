@@ -76,6 +76,13 @@
 
     /**
      * @ngdoc overview
+     * @name ngdocs
+     * @description Módulo asociado a la sección ng-docs.
+     */
+    angular.module('ngdocs', []);
+
+    /**
+     * @ngdoc overview
      * @name node
      * @description Módulo asociado a la sección NodeJS.
      */
@@ -104,6 +111,7 @@
         'angular',
         'brunch',
         'node',
+        'ngdocs',
         'sass',
         'bower',
         'npm',
