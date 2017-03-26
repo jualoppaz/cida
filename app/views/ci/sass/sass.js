@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('sass')
-        .controller('SassController', controller);
+        .controller('SassController', Controller);
 
-    controller.$inject = [];
-    function controller(){
+    Controller.$inject = [];
+    function Controller(){
         var self = this;
     }
 

@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('angular')
-        .controller('AngularController', controller);
+        .controller('AngularController', Controller);
 
-    controller.$inject = [];
-    function controller(){
+    Controller.$inject = [];
+    function Controller(){
         var self = this;
     }
 

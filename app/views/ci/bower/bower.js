@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('bower')
-        .controller('BowerController', controller);
+        .controller('BowerController', Controller);
 
-    controller.$inject = [];
-    function controller(){
+    Controller.$inject = [];
+    function Controller(){
         var self = this;
     }
 

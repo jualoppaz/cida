@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('npm')
-        .controller('NpmController', controller);
+        .controller('NpmController', Controller);
 
-    controller.$inject = ['npm'];
-    function controller(npm){
+    Controller.$inject = ['npm'];
+    function Controller(npm){
         var self = this;
 
         var params = npm.params;

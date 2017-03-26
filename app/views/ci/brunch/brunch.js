@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('brunch')
-        .controller('BrunchController', controller);
+        .controller('BrunchController', Controller);
 
-    controller.$inject = ['brunchService'];
-    function controller(brunch){
+    Controller.$inject = ['brunchService'];
+    function Controller(brunch){
         var self = this;
 
         var params = brunch.params;

@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('ngdocs')
-        .controller('NgDocsController', controller);
+        .controller('NgDocsController', Controller);
 
-    controller.$inject = [];
-    function controller(){
+    Controller.$inject = [];
+    function Controller(){
         var self = this;
     }
 
