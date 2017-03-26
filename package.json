@@ -11,8 +11,8 @@
     "test": "karma start ./karma.config.js",
     "prod": "brunch build --production",
     "postprod": "http-server public",
-    "heroku-prebuild": "rm -rf public && rm -rf node_modules && rm -rf bower_components",
-    "heroku-postbuild": "bower install && brunch build --production && node node_modules/ngdocs/bin/ngdocs.js && cp -f app/assets/docs/index.html public/docs/index.html && cp -f app/assets/images/tecnologia_brunch.png public/docs/img/logo.png"
+    "preinstall": "rm -rf public && rm -rf node_modules && rm -rf bower_components",
+    "postinstall": "bower install && brunch build --production && node node_modules/ngdocs/bin/ngdocs.js && cp -f app/assets/docs/index.html public/docs/index.html && cp -f app/assets/images/tecnologia_brunch.png public/docs/img/logo.png"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,10 @@
     "node",
     "brunch",
     "sass",
-    "jshint"
+    "jshint",
+    "ngdocs",
+    "npm",
+    "bower"
   ],
   "author": "Juan Manuel López Pazos",
   "license": "MIT",
