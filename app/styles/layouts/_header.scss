@@ -40,8 +40,17 @@
             text-align: center;
           }
 
-          .tecnologia, #titulo-aplicacion{
+          #titulo-aplicacion{
             display: inline-block;
+          }
+
+          .tecnologia{
+
+            display: none;
+
+            @include media_min(tablet){
+              display: inline-block;
+            }
           }
 
           #titulo-aplicacion{
