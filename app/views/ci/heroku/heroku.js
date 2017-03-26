@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('heroku')
-        .controller('HerokuController', controller);
+        .controller('HerokuController', Controller);
 
-    controller.$inject = ['herokuService'];
-    function controller(heroku){
+    Controller.$inject = ['herokuService'];
+    function Controller(heroku){
         var self = this;
 
         var params = heroku.params;

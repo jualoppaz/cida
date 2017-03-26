@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('jshint')
-        .controller('JSHintController', controller);
+        .controller('JSHintController', Controller);
 
-    controller.$inject = ['jshintService'];
-    function controller(jshint){
+    Controller.$inject = ['jshintService'];
+    function Controller(jshint){
         var self = this;
 
         var params = jshint.params;

@@ -9,6 +9,7 @@
     GeneralCtrl.$inject = ['$scope', '$rootScope', 'settings', '$state', 'generalService'];
 
     function GeneralCtrl($scope, $rootScope, settings, $state, general) {
+        /* jshint validthis: true */
         var self = this;
 
         $scope.nombreApp = settings.nombreApp;

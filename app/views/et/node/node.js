@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('node')
-        .controller('NodeController', controller);
+        .controller('NodeController', Controller);
 
-    controller.$inject = ['nodeService'];
-    function controller(node){
+    Controller.$inject = ['nodeService'];
+    function Controller(node){
         var self = this;
 
         var params = node.params;
