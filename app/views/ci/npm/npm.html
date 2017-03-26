@@ -11,7 +11,21 @@
     antes descargar todas las herramientas necesarias que se indican como dependencias.
 </p>
 <p>
-    El primer script relevante que hemos definido es el llamado "postinstall":
+    El primer script relevante que hemos definido es el llamado <b>preinstall</b>:
+</p>
+<pre>
+    "scripts": {
+        ...
+        "preinstall": "rm -rf public && rm -rf node_modules && rm -rf bower_components"
+        ...
+    }
+</pre>
+<p>
+    El objetivo de este script es bien sencillo: eliminar las librerías descargadas en compilaciones previas, así como el código
+    de la aplicación compilado con anterioridad. De este modo, siempre se realizarán compilaciones limpias en cada despliegue.
+</p>
+<p>
+    El siguiente script importante es el llamado <b>postinstall</b>:
 </p>
 <pre>
     "scripts": {
@@ -30,4 +44,45 @@
 <p>
     Con este comando descargaremos las dependencias de <a data-ng-href="{{general.getURLByScreenName('bower')}}">bower</a>, generando
     así la carpeta <b>bower_components</b>.
+</p>
+<pre>
+    $ brunch build --production
+</pre>
+<p>
+    El siguiente paso es compilar la aplicación mediante la herramienta
+    <a data-ng-href="{{general.getURLByScreenName('brunch')}}">brunch</a>. Con la opción <b>--production</b>, entre otras cosas,
+    conseguimos que se compile el código de forma minificada, reduciendo considerablemente el tamaño de los archivos generados.
+</p>
+<pre>
+    $ node node_modules/ngdocs/bin/ngdocs.js
+</pre>
+<p>
+    A continuación lo que hacemos es generar la documentación del código
+    <a data-ng-href="{{general.getURLByScreenName('angular')}}">AngularJS</a> de nuestra aplicación. Como la librería
+    <a data-ng-href="{{general.getURLByScreenName('ngdocs')}}">ngdocs</a> no tiene <b>Interfaz de Línea de Comandos</b> (conocido
+    comúnmente como <b>cli</b>) y normalmente no podremos instalarla de forma global en un hosting, tendremos que ejecutarla a través
+    del intérprete de <a data-ng-href="{{general.getURLByScreenName('node')}}">NodeJS</a> y la ruta relativa a la librería
+    <a data-ng-href="{{general.getURLByScreenName('ngdocs')}}">ngdocs</a> desde nuestro proyecto.
+</p>
+<pre>
+    $ cp -f app/assets/docs/index.html public/docs/index.html
+</pre>
+<p>
+    Este comando tiene como objetivo sustituir la plantilla por defecto de
+    <a data-ng-href="{{general.getURLByScreenName('ngdocs')}}">ngdocs</a> por una plantilla personalizada. Además de modificarse
+    ciertos aspectos del diseño se corrigen ciertos errores debidos a la falta de mantenimiento de la librería en los últimos años.
+</p>
+<pre>
+    $ cp -f app/assets/images/tecnologia_brunch.png public/docs/img/logo.png
+</pre>
+<p>
+    Este comando no debería ser necesario, puesto que <a data-ng-href="{{general.getURLByScreenName('ngdocs')}}">ngdocs</a> tiene
+    una opción para elegir una imagen propia a utilizar en la documentación generada. Sin embargo, al desplegar la aplicación en
+    <a data-ng-href="{{general.getURLByScreenName('heroku')}}">Heroku</a> parece no funcionar, bien porque no disponemos de permisos
+    de escritura en tiempo de ejecución o bien porque <a data-ng-href="{{general.getURLByScreenName('ngdocs')}}">ngdocs</a> no
+    recupera correctamente la imagen que hemos indicado.
+</p>
+<p>
+    En cualquier caso, con este comando evitamos dicho problema y sobrescribimos la imagen generada por
+    <a data-ng-href="{{general.getURLByScreenName('ngdocs')}}">ngdocs</a>.
 </p>
