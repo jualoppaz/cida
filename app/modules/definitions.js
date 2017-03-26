@@ -77,7 +77,7 @@
     /**
      * @ngdoc overview
      * @name ngdocs
-     * @description Módulo asociado a la sección ng-docs.
+     * @description Módulo asociado a la sección ngdocs.
      */
     angular.module('ngdocs', []);
 
