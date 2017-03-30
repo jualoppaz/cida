@@ -11,8 +11,8 @@
     "test": "karma start ./karma.config.js",
     "prod": "brunch build --production",
     "postprod": "http-server public",
-    "preinstall": "rm -rf public && rm -rf node_modules && rm -rf bower_components",
-    "postinstall": "./node_modules/bower/bin/bower install && brunch build --production && node node_modules/ngdocs/bin/ngdocs.js && cp -f app/assets/docs/index.html public/docs/index.html && cp -f app/assets/images/tecnologia_brunch.png public/docs/img/logo.png"
+    "preinstall": "rm -rf public",
+    "postinstall": "bower install && brunch build --production && node node_modules/ngdocs/bin/ngdocs.js && cp -f app/assets/docs/index.html public/docs/index.html && cp -f app/assets/images/tecnologia_brunch.png public/docs/img/logo.png"
   },
   "repository": {
     "type": "git",
@@ -55,5 +55,6 @@
   },
   "devDependencies": {
     "jshint-brunch": "^2.0.0"
-  }
+  },
+  "cacheDirectories": []
 }
