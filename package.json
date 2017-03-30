@@ -1,4 +1,5 @@
 {
+  "cacheDirectories": [],
   "name": "cida",
   "version": "1.0.0",
   "description": "Aplicación de ejemplo para la integración continua en aplicaciones AngularJS con Brunch, haciendo uso de JSHint o Sass, entre otras.",
@@ -55,6 +56,5 @@
   },
   "devDependencies": {
     "jshint-brunch": "^2.0.0"
-  },
-  "cacheDirectories": [""]
+  }
 }
