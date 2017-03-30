@@ -56,5 +56,5 @@
   "devDependencies": {
     "jshint-brunch": "^2.0.0"
   },
-  "cacheDirectories": []
+  "cacheDirectories": [""]
 }
