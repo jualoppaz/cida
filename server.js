@@ -44,7 +44,7 @@ exports.startServer = function(port, path, callback) {
     return server;
 };
 
-var portHeroku = process.env.PORT;
+/*var portHeroku = process.env.PORT;
 
 console.log("Ruta actual del servidor:", __dirname);
 
@@ -58,4 +58,4 @@ if(portHeroku){
     exports.startServer(portHeroku, directory, function(err, res){
         console.log("Servidor arrancado en Heroku correctamente en puerto:", portHeroku);
     });
-}
+}*/
