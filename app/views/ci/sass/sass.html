@@ -10,11 +10,87 @@
     de una aplicación web sólo con <b>CSS</b>.
 </p>
 <p>
+    En una aplicación web tradicional podríamos tener una hoja de estilos inmensa, o por el contrario muchas hojas de estilo:
+</p>
+<ul>
+    <li>
+        En el primer caso sería muy costoso realizar una buena maquetación e imposible la reutilización de código.
+    </li>
+    <li>
+        En el segundo caso, por cada nuevo módulo tendríamos que añadir una nueva importación a nuestro archivo <b>HTML</b> de nuestra
+        aplicación web:
+    </li>
+</ul>
+<pre id="css-code-example">
+    ...
+    &lt;link rel="stylesheet" type="text/css" href="/css/modulo1.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="/css/modulo2.css"&gt;
+    ...
+    &lt;link rel="stylesheet" type="text/css" href="/css/moduloN.css"&gt;
+    ...
+</pre>
+<p>
     Para eso están los preprocesadores como <b>Sass</b>. Gracias a esta herramienta podemos definir variables, definir los
     estilos de una pantalla en forma de árbol anidando los selectores, añadir las media queries mediante funciones...
     En definitiva, podremos realizar una buena maquetación con una cantidad de líneas de código bastante inferior y centralizando
     muchísimos valores, evitando así código duplicado.
 </p>
 <p>
-    xoxComentar brevemente la estructura de carpetas en las que se encuentran las hojas de estilo.
+    De este modo, no tendríamos que añadir una importación de una hoja de estilos por cada nuevo módulo que desarrollemos. Un ejemplo
+    podría ser el siguiente:
 </p>
+<pre>
+    ...
+    &lt;link rel="stylesheet" type="text/css" href="/css/vendor.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="/css/app.css"&gt;
+    ...
+</pre>
+<p>
+    Para este proyecto la estructura de directorios utilizada para las hojas de estilos ha sido la siguiente:
+</p>
+<pre>
+    styles/
+        components/
+            _breadcrumbs.scss
+            _toast.scss
+        layouts/
+            _footer.scss
+            _header.scss
+            _main.scss
+            _vnav.scss
+        lib/
+            _animaciones.scss
+            _global.scss
+            _globalLasts.scss
+            _mixins.scss
+            _variables.scss
+        views/
+            _sass.scss
+        styles.scss
+</pre>
+<p>
+    El fichero principal es el <b>styles.scss</b>, el cual incluye todos los ficheros parciales, y su contenido es el siguiente:
+</p>
+<pre>
+    // Librerías
+    @import "lib/animaciones";
+    @import "lib/variables";
+    @import "lib/mixins";
+    @import "lib/global";
+
+    // Componentes
+    @import "components/breadcrumbs";
+    @import "components/toast";
+
+    // Layouts
+    @import "layouts/header";
+    @import "layouts/vnav";
+    @import "layouts/main";
+    @import "layouts/footer";
+
+    // Vistas
+    @import "views/sass";
+
+    // CSS necesario al final
+    @import "lib/globalLasts";
+</pre>

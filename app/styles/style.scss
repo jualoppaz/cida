@@ -1,4 +1,5 @@
 // Librerías
+@import "lib/animaciones";
 @import "lib/variables";
 @import "lib/mixins";
 @import "lib/global";
@@ -14,7 +15,7 @@
 @import "layouts/footer";
 
 // Vistas
-
+@import "views/sass";
 
 // CSS necesario al final
 @import "lib/globalLasts";
