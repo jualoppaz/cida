@@ -2,20 +2,20 @@
 
     'use strict';
 
-    angular.module('jshint').factory('jshint', service);
+    angular.module('sass').factory('sass', service);
 
     service.$inject = [];
 
     /**
      * @ngdoc service
-     * @name jshint.jshint
+     * @name sass.sass
      * @description
-     * Servicio que contendrá todas las operaciones necesarias relacionadas con la sección Heroku.
+     * Servicio que contendrá todas las operaciones necesarias relacionadas con la sección Sass.
      */
     function service(){
         var service = {
             params: {
-                logo: 'images/tecnologia_jshint.png'
+                logo: 'images/tecnologia_sass.png'
             }
         };
 

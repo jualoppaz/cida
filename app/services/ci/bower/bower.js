@@ -2,20 +2,20 @@
 
     'use strict';
 
-    angular.module('jshint').factory('jshint', service);
+    angular.module('bower').factory('bower', service);
 
     service.$inject = [];
 
     /**
      * @ngdoc service
-     * @name jshint.jshint
+     * @name bower.bower
      * @description
-     * Servicio que contendrá todas las operaciones necesarias relacionadas con la sección Heroku.
+     * Servicio que contendrá todas las operaciones necesarias relacionadas con la sección Bower.
      */
     function service(){
         var service = {
             params: {
-                logo: 'images/tecnologia_jshint.png'
+                logo: 'images/tecnologia_bower.png'
             }
         };
 

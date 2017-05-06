@@ -5,7 +5,7 @@
     angular.module('heroku')
         .controller('HerokuController', Controller);
 
-    Controller.$inject = ['herokuService'];
+    Controller.$inject = ['heroku'];
     function Controller(heroku){
         var self = this;
 

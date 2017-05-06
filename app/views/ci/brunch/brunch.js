@@ -5,7 +5,7 @@
     angular.module('brunch')
         .controller('BrunchController', Controller);
 
-    Controller.$inject = ['brunchService'];
+    Controller.$inject = ['brunch'];
     function Controller(brunch){
         var self = this;
 

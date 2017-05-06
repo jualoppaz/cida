@@ -25,6 +25,20 @@
                 displayName: 'Inicio'
             },
             resolve: {}
+        })
+        .state('404', {
+            url: "/404",
+            views: {
+                'general': {
+                    templateUrl: "app/views/404.html",
+                    controller: 'NotFoundController as notFound'
+                }
+            },
+            parent: 'layout',
+            data: {
+                displayName: '404'
+            },
+            resolve: {}
         });
     }
 

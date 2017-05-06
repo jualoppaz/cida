@@ -5,7 +5,7 @@
     angular.module('jshint')
         .controller('JSHintController', Controller);
 
-    Controller.$inject = ['jshintService'];
+    Controller.$inject = ['jshint'];
     function Controller(jshint){
         var self = this;
 

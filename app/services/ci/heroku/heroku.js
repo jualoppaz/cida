@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('heroku').factory('herokuService', service);
+    angular.module('heroku').factory('heroku', service);
 
     service.$inject = [];
 

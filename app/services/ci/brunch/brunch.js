@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('brunch').factory('brunchService', service);
+    angular.module('brunch').factory('brunch', service);
 
     service.$inject = [];
 
