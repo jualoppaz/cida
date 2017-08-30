@@ -38,9 +38,7 @@
 <pre>
     "scripts": {
         "start": "brunch watch --server",
-        "test": "karma start ./karma.config.js",
-        "prod": "brunch build --production",
-        "postprod": "http-server public",
+        ...,
         "preinstall": "rm -rf public && rm -rf node_modules && rm -rf bower_components",
         "postinstall": "bower install && brunch build --production && node node_modules/ngdocs/bin/ngdocs.js && cp -f app/assets/docs/index.html public/docs/index.html && cp -f app/assets/images/tecnologia_brunch.png public/docs/img/logo.png"
     }
@@ -48,7 +46,7 @@
 <p>
     Cuando desplegamos nuestra aplicación en Heroku se instalan nuestras dependencias en primer lugar. A continuación se ejecutan los
     scripts <b>preinstall</b> y <b>postinstall</b>. Después de que se realicen todas las acciones que hemos indicado Heroku se encarga
-    de iniciar la aplicación.
+    de iniciar la aplicación. El resto de scripts no se ejecutan de forma automática, sólo lo harán si son llamados directamente.
 </p>
 <p>
     Como dijimos, Heroku busca el fichero <b>Procfile</b> para arrancar la aplicación. Como hemos optado por la segunda opción, Heroku
