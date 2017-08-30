@@ -10,3 +10,51 @@
     Esto quiere decir que no es el típico hosting en el que copies las carpetas compiladas de tu aplicación web, sino que que puedes
     compilar tu aplicación en el servidor al igual que puedas hacerlo en tu máquina.
 </p>
+<p>
+    Para desplegar una aplicación en Heroku tenemos que indicar de alguna forma qué tipo de servidor vamos a correr. En este caso, en
+    el que vamos a utilizar un servidor de <a data-ng-href="{{general.getURLByScreenName('node')}}">NodeJS</a>, tenemos 2 opciones:
+</p>
+<ul>
+    <li>Crear y configurar un fichero llamado <b>Procfile</b></li>
+    <li>Hacer uso del script <b>start</b> de <a data-ng-href="{{general.getURLByScreenName('npm')}}">NPM</a>, el cual es ejecutado
+    por defecto desde Heroku si no encuentra un <b>Procfile</b></li>
+</ul>
+<p>
+    Si elegimos la primera opción tendríamos que añadir en el <b>Procfile</b> un contenido similar a este:
+</p>
+<pre>
+    web: node server.js
+</pre>
+<p>
+    Con <b>web</b> le indicamos a Heroku el tipo de proceso que deseamos ejecutar. A continuación se le indica que el servidor a
+    correr será implementado con <a data-ng-href="{{general.getURLByScreenName('node')}}">NodeJS</a>, mientras que en el último
+    parámetro indicamos cuál es el fichero que se corresponde con el servidor.
+</p>
+<p>
+    La segunda opción (la que hemos escogido en este proyecto) se basa de una definición personalizada de scripts de
+    <a data-ng-href="{{general.getURLByScreenName('npm')}}">NPM</a> en el fichero <b>Package.json</b>, la cual se detalla
+    a continuación:
+</p>
+<pre>
+    "scripts": {
+        "start": "brunch watch --server",
+        "test": "karma start ./karma.config.js",
+        "prod": "brunch build --production",
+        "postprod": "http-server public",
+        "preinstall": "rm -rf public && rm -rf node_modules && rm -rf bower_components",
+        "postinstall": "bower install && brunch build --production && node node_modules/ngdocs/bin/ngdocs.js && cp -f app/assets/docs/index.html public/docs/index.html && cp -f app/assets/images/tecnologia_brunch.png public/docs/img/logo.png"
+    }
+</pre>
+<p>
+    Cuando desplegamos nuestra aplicación en Heroku se instalan nuestras dependencias en primer lugar. A continuación se ejecutan los
+    scripts <b>preinstall</b> y <b>postinstall</b>. Después de que se realicen todas las acciones que hemos indicado Heroku se encarga
+    de iniciar la aplicación.
+</p>
+<p>
+    Como dijimos, Heroku busca el fichero <b>Procfile</b> para arrancar la aplicación. Como hemos optado por la segunda opción, Heroku
+    ejecutará el script <b>start</b>, en el que iniciamos el servidor
+    <a data-ng-href="{{general.getURLByScreenName('brunch')}}">Brunch</a>.
+</p>
+<p>
+    Si lo hemos hecho todo bien ya podremos disfrutar de nuestra aplicación web en funcionamiento.
+</p>
