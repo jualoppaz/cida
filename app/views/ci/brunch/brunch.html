@@ -2,6 +2,16 @@
     Brunch
     <img data-ng-src="{{brunch.logo}}" class="tecnologia-titulo img-rounded"/>
 </h1>
-<p>El Front-End de esta aplicación web se compila al completo con el framework Brunch.</p>
-<p>Ésta es la herramienta clave para conseguir implementar una buena Integración Continua sobre una aplicación web con
-    <a ui-sref="angular">AngularJS</a>.</p>
+<p>
+    El Front-End de esta aplicación web se compila al completo con el framework Brunch.
+</p>
+<p>
+    Ésta es la herramienta clave para conseguir implementar una buena Integración Continua sobre una aplicación web con
+    <a data-ng-href="{{general.getURLByScreenName('angular')}}">AngularJS</a>. Podríamos haber elegido otra como pueden
+    ser Gulp o Grunt, pero Brunch nos permite realizar multitud de tareas sin tener que desarrollar lo más mínimo
+    gracias a la multitud de plugins existentes y sus amplias posibilidade de configuración.
+</p>
+<p>
+    La configuración de Brunch debe ir en un fichero <b>brunch-config.js</b> situado en la raíz de nuestro proyecto,
+    ruta en la que iniciaremos nuestro servidor mediante Brunch.
+</p>
