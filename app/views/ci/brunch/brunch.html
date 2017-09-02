@@ -15,3 +15,112 @@
     La configuración de Brunch debe ir en un fichero <b>brunch-config.js</b> situado en la raíz de nuestro proyecto,
     ruta en la que iniciaremos nuestro servidor mediante Brunch.
 </p>
+<p>
+    A continuación veremos un posible fichero <b>brunch-config.js</b> para poder desarrollar de una forma ágil y eficiente:
+</p>
+<pre>
+exports.config = {
+    npm: {
+        enabled: false
+    },
+    files: {
+        javascripts: {
+            joinTo: {
+                'js/app.js': /^app/,
+                'js/vendor.js': /^(vendor|bower_components)/
+            },
+            entryPoints: {
+                'app/app.js': 'js/app.js'
+            },
+            order: {
+                before: [
+                    'bower_components/jquery/dist/jquery.js',
+                    'app/modules/definition.js'],
+                after: [
+                    'app/router.js',
+                    'app/app.js'
+                ]
+            }
+        },
+        stylesheets: {
+            order: {
+                before: ['bower_components/bootstrap/dist/css/bootstrap.css']
+            },
+            joinTo: {
+                'css/app.css': /^app(\/|\\)styles/,
+                'css/vendor.css': /^(vendor|bower_components)/
+            }
+        },
+        templates: {
+            joinTo: {
+                'js/templates.js': /^bower_components(\/|\/)angular-utils-ui-breadcrumbs|app/
+            }
+        }
+    },
+    plugins: {
+        jshint: {
+            pattern: /^app\/.*\.js$/,
+            options: {
+                strict: true,
+                bitwise: true,
+                curly: true,
+                unused: true,
+                eqeqeq: true
+            },
+            warnOnly: true
+        },
+        digest: {
+            alwaysRun: false,
+            environments: ['production']
+        },
+        afterBrunch: [
+            'rm -f public/config/config_*.json',
+            'cp bower_components/components-font-awesome/fonts/* public/fonts',
+            'cp bower_components/bootstrap/fonts/* public/fonts'
+        ]
+    },
+    // Configuracion especifica del servidor NodeJS utilizado mediante Brunch
+    server: {
+        path: 'server.js',
+        port: Number(process.env.PORT) || 3333,
+        base: '/'
+    }
+};
+</pre>
+<p>
+    La parte principal es la configuración de ficheros a compilar. Como podemos observar, podemos indicar dónde se
+    encuentran los ficheros JavaScript, HTML y CSS o Sass. Debido a que el orden de procesamiento de ficheros es
+    alfabético podemos indicar los ficheros que deseemos procesar en primer lugar, lo cual es útil para aquellos casos
+    en los que se producen dependencias entre ficheros.
+</p>
+<p>
+    En el campo <b>plugins</b> podemos encontrar todas aquellas configuraciones que son externas a Brunch y que
+    pertenecen a plugins desarrollados específicamente para ser utilizados de forma implícita. Se destacan en este
+    ejemplo las configuraciones de <a data-ng-href="{{general.getURLByScreenName('jshint')}}">JSHint</a>, <b>Digest</b>
+    y <b>AfterBrunch</b>.
+</p>
+<p>
+    <b>Digest</b> se utiliza para generar nombres distintos para los ficheros estáticos que han sido compilados,
+    evitando así las conflictos ocasionados por la caché de los navegadores. No menos importante es <b>AfterBrunch</b>,
+    que nos permite ejecutar cuantos scripts queramos tras la compilación de nuestro proyecto mediante Brunch.
+</p>
+<p>
+    Tenemos total libertad para añadir cuantos plugins de Brunch queramos. Sólo tenemos que acudir a su web oficial y
+    buscar la documentación oficial del plugin a utilizar y configurarlo correctamente en este campo del fichero.
+</p>
+<p>
+    En último lugar detallamos el servidor que utilizaremos para iniciar nuestra aplicación a través del comando:
+</p>
+<pre>
+    $ brunch watch --server
+</pre>
+<p>
+    Por defecto, Brunch arranca nuestra aplicación en <b>http://localhost:3333</b> sirviendo la carpeta pública situada
+    en <b>/public</b>, la cual debe contar con un fichero <b>index.html</b>. Como necesitamos realizar pequeños
+    ajustes, algunos relacionados con el despliegue en
+    <a data-ng-href="{{general.getURLByScreenName('heroku')}}">Heroku</a>, hemos redefinido algunas propiedades.
+</p>
+<p>
+    Si partimos de esta configuración podremos comenzar de una forma correcta y ágil: sólo quedaría personalizar
+    nuestro entorno en función de las necesidades de nuestro proyecto y metodología de trabajo.
+</p>
