@@ -14,7 +14,7 @@
             npm: "ci.npm",
             bower: "ci.bower",
             sass: "ci.sass",
-            angular: "ci.angular",
+            angularjs: "ci.angularjs",
             jshint: "ci.jshint",
             ngdocs: "ci.ngdocs",
             heroku: "ci.heroku",

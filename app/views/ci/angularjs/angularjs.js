@@ -2,15 +2,15 @@
 
     'use strict';
 
-    angular.module('angular')
+    angular.module('angularjs')
         .controller('AngularController', Controller);
 
-    Controller.$inject = ['angular'];
+    Controller.$inject = ['angularjs'];
 
-    function Controller(angular){
+    function Controller(angularjs){
         var self = this;
 
-        var params = angular.params;
+        var params = angularjs.params;
 
         self.logo = params.logo;
     }

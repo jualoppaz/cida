@@ -2,13 +2,13 @@
 
     'use strict';
 
-    angular.module('angular').factory('angular', service);
+    angular.module('angularjs').factory('angularjs', service);
 
     service.$inject = [];
 
     /**
      * @ngdoc service
-     * @name angular.angular
+     * @name angularjs.angularjs
      * @description
      * Servicio que contendrá todas las operaciones necesarias relacionadas con la sección AngularJS.
      */

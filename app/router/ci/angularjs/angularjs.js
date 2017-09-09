@@ -8,17 +8,17 @@
     config.$inject = ['$stateProvider'];
     function config($stateProvider) {
 
-        $stateProvider.state('ci.angular', {
-            url: "/angular",
+        $stateProvider.state('ci.angularjs', {
+            url: "/angularjs",
             views: {
                 'general': {
-                    templateUrl: "app/views/ci/angular/angular.html",
-                    controller: 'AngularController as angular'
+                    templateUrl: "app/views/ci/angularjs/angularjs.html",
+                    controller: 'AngularjsController as angularjs'
                 }
             },
             parent: 'layout',
             data: {
-                displayName: 'Angular'
+                displayName: 'AngularJS'
             },
             resolve: {}
         });

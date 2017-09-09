@@ -41,10 +41,10 @@
 
     /**
      * @ngdoc overview
-     * @name angular
+     * @name angularjs
      * @description Módulo asociado a la sección AngularJS.
      */
-    angular.module('angular', []);
+    angular.module('angularjs', []);
 
     /**
      * @ngdoc overview
@@ -108,7 +108,7 @@
      * @description Módulo en el que se incluirán las pantallas básicas de la aplicación.
      */
     angular.module('general', [
-        'angular',
+        'angularjs',
         'brunch',
         'node',
         'ngdocs',
