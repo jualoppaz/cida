@@ -3,7 +3,7 @@
     'use strict';
 
     angular.module('angularjs')
-        .controller('AngularController', Controller);
+        .controller('AngularjsController', Controller);
 
     Controller.$inject = ['angularjs'];
 
