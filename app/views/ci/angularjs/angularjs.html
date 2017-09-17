@@ -18,3 +18,220 @@
     aspecto relacionado con las navegaciones entre pantallas, completando de una forma extraordinaria los módulos
     nativos que ofrece AngularJS.
 </p>
+<p>
+    Un ejemplo de enrutado utilizando las herramientas que proporciona AngularJS podría ser el siguiente:
+</p>
+<pre>
+    var app = angular.module("myApp", ["ngRoute"]);
+    app.config(function($routeProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl : "main.htm",
+                controller: 'MainController',
+                resolve: {
+                    data: function() {
+                        ...
+                        return ...;
+                    }
+                }
+            })
+            .when("/route1", {
+                templateUrl : "file1.htm",
+                controller: 'File1Controller',
+                resolve: {
+                    data: function() {
+                        ...
+                        return ...;
+                    }
+                }
+            })
+            .when("/route2", {
+                templateUrl : "file2.htm",
+                controller: 'File2Controller',
+                resolve: {
+                    data: function() {
+                        ...
+                        return ...;
+                    }
+                }
+            })
+            ...
+            ;
+    });
+</pre>
+<p>
+    Como podemos ver, AngularJS nos proporciona una serie de configuraciones entre las que podemos indicar: ruta de la
+    pantalla definida, ruta del template asociado a la pantalla, controlador a utilizar para la pantalla y un resolve,
+    que no es más que una utilidad para consultar datos a un servidor o realizar algún cálculo previo a la carga de la
+    pantalla, lo cual nos puede ser muy útil para evitar una construcción progresiva de la pantalla.
+</p>
+<p>
+    Para una aplicación sencilla podría resultarnos suficiente con estas configuraciones. Sin embargo, la librería
+    <a ng-href="https://ui-router.github.io/" target="_blank">UI-Router</a> ofrece una serie de mejoras que se pueden
+    apreciar en el siguiente ejemplo:
+</p>
+<pre>
+    angular.module('rutas')
+        .config(config);
+
+    config.$inject = ['$stateProvider'];
+    function config($stateProvider) {
+
+        $stateProvider.state('ci.angularjs', {
+            url: "/angularjs",
+            views: {
+                'general': {
+                    templateUrl: "app/views/ci/angularjs/angularjs.html",
+                    controller: 'AngularjsController as angularjs'
+                }
+            },
+            parent: 'layout',
+            data: {
+                displayName: 'AngularJS'
+            },
+            resolve: {}
+        });
+    }
+</pre>
+<p>
+    A diferencia del ejemplo anterior, en esta ocasión podemos:
+</p>
+<ul>
+    <li>Definir y referenciar a las pantallas por código (<b>ci.angularjs</b>) y ruta (<b>/angularjs</b>).</li>
+    <li>Definir múltiples ng-views en un único template, pudiendo distinguirlos por un identificador único (en este
+        caso se llama <b>general</b>).</li>
+    <li>Configurar individualmente cada ng-view concreto (<b>templateUrl</b> y
+            <b>controller</b> en este ejemplo).</li>
+</ul>
+<p>
+    A continuación se presenta el ejemplo de la página principal de la aplicación, en el que se verá con claridad cómo
+    son aprovechadas todas y cada una de las ventajas que ofrece esta librería:
+</p>
+<p>
+    <b>index.html</b>:
+</p>
+<pre>
+    &lt;html data-ng-controller="GeneralCtrl as general"&gt;
+        &lt;head>
+            ...
+        &lt;/head>
+        &lt;body id="{{general.getActualState()}}">
+            &lt;div id="page">
+                &lt;header id="header" data-ui-view="header"&gt;&lt;/header&gt;
+                &lt;main id="main" data-ui-view="main" data-ng-hide="loadingView || loading" data-ng-cloak&gt;&lt;/main&gt;
+                &lt;footer id="footer" class="footer" data-ui-view="footer" data-ng-hide="loadingView || loading" data-ng-cloak&gt;&lt;/footer&gt;
+            &lt;/div&gt;
+            ...
+        &lt;/body&gt;
+    &lt;/html&gt;
+</pre>
+<p>
+    <b>main.html</b>:
+</p>
+<pre>
+    &lt;nav id="menu" class="hide-menu pull-left"&gt;
+        &lt;nav id="vertical" ui-view="vnav">&lt;/nav&gt;
+    &lt;/nav&gt;
+    &lt;div data-menu-control class='toggle-menu'&gt;&lt;/div&gt;
+
+    &lt;div id="content" class="pull-right" ui-view="sub-container"&gt;&lt;/div&gt;
+</pre>
+<p>
+    <b>sub-container.html</b>:
+</p>
+<pre>
+    &lt;div id="breadcrumbs" ui-view="breadcrumbs"&gt;&lt;/div&gt;
+
+    &lt;div class="content-wrapper"&gt;
+        &lt;div id="general" ui-view="general"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+</pre>
+<p>
+    <b>layout.js</b>:
+</p>
+<pre>
+    angular.module('rutas')
+        .config(config);
+
+    config.$inject = ['$stateProvider'];
+    function config($stateProvider) {
+        $stateProvider
+            .state('layout', {
+                url: '',
+                abstract: true,
+                views: {
+                    'header': {
+                        templateUrl: 'app/views/layouts/header/header.html'
+                    },
+                    'hnav@layout': {
+                        templateUrl: 'app/views/layouts/hnav/hnav.html',
+                        controller: 'HnavCtrl as hnav'
+                    },
+                    'main': {
+                        templateUrl: 'app/views/layouts/main/main.html'
+                    },
+                    'vnav@layout': {
+                        templateUrl: 'app/views/layouts/vnav/vnav.html',
+                        controller: 'VnavCtrl as vnav'
+                    },
+                    'sub-container@layout': {
+                        templateUrl: 'app/views/layouts/sub-container/sub-container.html'
+                    },
+                    'breadcrumbs@layout': {
+                        templateUrl: 'app/views/layouts/breadcrumbs/breadcrumbs.html'
+                    },
+                    'footer': {
+                        templateUrl: 'app/views/layouts/footer/footer.html'
+                    }
+                },
+                data: {
+                    breadcrumbProxy: 'home'
+                },
+                resolve: {}
+            });
+    }
+</pre>
+<p>
+    <b>router.js</b>:
+</p>
+<pre>
+    angular.module('rutas')
+        .config(config)
+        .run(run);
+
+    config.$inject = ['$urlRouterProvider', '$stateProvider'];
+    function config($urlRouterProvider, $stateProvider) {
+        ...
+
+        $stateProvider.state('home', {
+            url: "/",
+            views: {
+                'general': {
+                    templateUrl: "app/views/home.html",
+                    controller: 'HomeController as home'
+                }
+            },
+            parent: 'layout',
+            data: {
+                displayName: 'Inicio'
+            },
+            resolve: {}
+        })
+        ...
+    }
+</pre>
+<p>
+    Con estos ficheros HTML y JavaScript podemos ver claramente cómo es la secuencia de llamadas para construir la
+    página de inicio:
+</p>
+<ol>
+    <li>Se cargan los parámetros del estado <b>home</b>, el cual hace referencia al estado <b>layout</b> mediante el
+        atributo <b>parent</b>.</li>
+    <li>El estado <b>layout</b> inyecta la plantilla y controlador correspondiente a cada ng-view, propagándose desde
+        el fichero <b>index.html</b> hasta el <b>general</b>, el cual contiene el contenido específico de cada pantala.</li>
+</ol>
+<p>
+    <b>NOTA</b>: hacer uso del atributo <b>parent</b> es equivalente a definir el estado como <b>layout.home</b>.
+    Sin embargo, resulta más práctico y mantenible definir la relación mediante el atributo característico de
+    <a ng-href="https://ui-router.github.io/" target="_blank">UI-Router</a>.
+</p>
