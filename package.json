@@ -7,7 +7,7 @@
     "npm": "3.10.10"
   },
   "scripts": {
-    "start": "brunch watch --server",
+    "start": "node server",
     "test": "karma start ./karma.config.js",
     "prod": "brunch build --production",
     "postprod": "http-server public",
