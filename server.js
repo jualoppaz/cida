@@ -1,8 +1,8 @@
-var express, http, sysPath;
+var express, http, sysPath, statik;
 express = require('express');
 sysPath = require('path');
 http = require('http');
-var statik = require('statik');
+statik = require('statik');
 
 if(process.env.PORT){
     statik({
@@ -24,7 +24,8 @@ if(process.env.PORT){
         app.all("/", function (req, res) {
             console.log("Entramos en ruta: /");
             console.log("Ruta recibida:", req.url);
-            return res.redirect('index.html');
+            var filePath = sysPath.resolve(sysPath.join(path, 'index.html'));
+            return res.sendFile(filePath);
         });
 
         app.get("/docs*", function (req, res) {
@@ -38,7 +39,7 @@ if(process.env.PORT){
             var filePath = sysPath.resolve(sysPath.join(path, 'index.html'));
 
             console.log("Ubicacion del fichero a retornar:", filePath);
-            return res.sendFile(filePath);
+            return res.redirect('/');
         });
 
         server = http.createServer(app);
@@ -51,19 +52,3 @@ if(process.env.PORT){
         return server;
     };
 }
-
-/*var portHeroku = process.env.PORT;
-
-console.log("Ruta actual del servidor:", __dirname);
-
-if(portHeroku){
-    console.log("Puerto en Heroku:", portHeroku);
-
-    var directory = sysPath.resolve(sysPath.join(__dirname, "/public"));
-
-    console.log("Path enviado a servidor en Heroku:", directory);
-
-    exports.startServer(portHeroku, directory, function(err, res){
-        console.log("Servidor arrancado en Heroku correctamente en puerto:", portHeroku);
-    });
-}*/

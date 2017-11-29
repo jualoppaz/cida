@@ -2,6 +2,141 @@
     NodeJS
     <img data-ng-src="{{node.logo}}" class="tecnologia-titulo img-rounded"/>
 </h1>
-<p>Como tecnología extra se ha añadido a esta aplicación web la implementación del Servidor con NodeJS incluyendo al framework
-    <a ui-sref="express">Express</a>.</p>
-<p></p>
+<p>
+    Como tecnología extra se ha añadido a esta aplicación web la implementación del Servidor con NodeJS incluyendo al
+    framework <a ng-href="http://expressjs.com/es/" target="_blank">Express</a>.
+</p>
+<p>
+    <a data-ng-href="{{general.getURLByScreenName('brunch')}}">Brunch</a> es una tecnología que permite la posibilidad
+    de la implementación y configuración de un servidor HTTP mediante NodeJS, de modo que en pocas líneas podamos
+    servir nuestra aplicación ya compilada.
+</p>
+<p>
+    Veamos a continuación un ejemplo de un posible servidor que nos sirva para arrancar la aplicación, tanto en local
+    como en <a data-ng-href="{{general.getURLByScreenName('heroku')}}">Heroku</a>:
+</p>
+<pre>
+    var express, http, sysPath;
+    express = require('express');
+    sysPath = require('path');
+    http = require('http');
+
+    exports.startServer = function (port, path, callback) {
+        var app, server;
+        app = express();
+
+        app.use(express.static(path));
+
+        require('./express/router')(app);
+
+        app.all("/", function (req, res) {
+            var filePath = sysPath.resolve(sysPath.join(path, 'index.html'));
+            return res.sendFile(filePath);
+        });
+
+        app.get("/docs*", function (req, res) {
+            var filePath = sysPath.resolve(sysPath.join(path, "docs/index.html"));
+            return res.sendFile(filePath);
+        });
+
+        app.all('/*', function (req, res) {
+            return res.redirect('/');
+        });
+
+        server = http.createServer(app);
+
+        // Inicializacion alternativa en Heroku
+        port = process.env.PORT || port;
+
+        server.listen(parseInt(port, 10), callback);
+
+        return server;
+    };
+}
+</pre>
+<p>
+    Este servidor nos serviría perfectamente para arrancar nuestra aplicación mediante
+    <a data-ng-href="{{general.getURLByScreenName('brunch')}}">Brunch</a> tanto en local como en
+    <a data-ng-href="{{general.getURLByScreenName('heroku')}}">Heroku</a>.
+    Cuando estemos en <a data-ng-href="{{general.getURLByScreenName('heroku')}}">Heroku</a> debemos hacer uso del
+    puerto que indique la variable de entorno <b>process.env.PORT</b>, mientras que en local debemos hacer uso de la
+    variable <b>port</b> recibida como parámetro, la cual es inyectada por
+    <a data-ng-href="{{general.getURLByScreenName('brunch')}}">Brunch</a> tras ser definida en el fichero
+    <b>brunch-config.js</b>: en el caso de que no se indique se utiliza por defecto el puerto <b>3333</b>.
+</p>
+<p>
+    Para hacer uso de esta implementación en <a data-ng-href="{{general.getURLByScreenName('heroku')}}">Heroku</a> sólo
+    tenemos que asegurarnos de que en el script <b>start</b> de
+    <a data-ng-href="{{general.getURLByScreenName('npm')}}">NPM</a> en nuestro <b>package.json</b> se ejecuta el
+    comando <b>brunch watch --server</b>.
+</p>
+<p>
+    A pesar de que la anterior implementación sería totalmente válida existe un pequeño contratiempo:
+    <a data-ng-href="{{general.getURLByScreenName('brunch')}}">Brunch</a> sólo tiene un mecanismo para arrancar un
+    servidor y es mediante el comando <b>watch</b>, el cual hace a la aplicación permanecer a la espera de cambios en
+    el código fuente para volver a compilarlo todo y arrancar de nuevo la aplicación.
+</p>
+<p>
+    Es evidente que en un entorno de Producción esto no va a pasar y que, por tanto, resulta un poco estéril la
+    ejecución de este comando. Por tanto, el autor de esta herramienta
+    (<a href="https://github.com/paulmillr" target="_blank">Paul Millr</a>) propone la siguiente
+    <a href="https://gist.github.com/paulmillr/3596447" target="_blank">solución</a>.
+</p>
+<pre>
+    var express, http, sysPath, statik;
+    express = require('express');
+    sysPath = require('path');
+    http = require('http');
+    statik = require('statik');
+
+    if(process.env.PORT){
+        statik({
+            port: process.env.PORT
+        });
+    }else {
+        exports.startServer = function (port, path, callback) {
+            var app, server;
+            app = express();
+
+            app.use(express.static(path));
+
+            require('./express/router')(app);
+
+            app.all("/", function (req, res) {
+                var filePath = sysPath.resolve(sysPath.join(path, 'index.html'));
+                return res.sendFile(filePath);
+            });
+
+            app.get("/docs*", function (req, res) {
+                var filePath = sysPath.resolve(sysPath.join(path, "docs/index.html"));
+                return res.sendFile(filePath);
+            });
+
+            app.all('/*', function (req, res) {
+                return res.redirect('/');
+            });
+
+            server = http.createServer(app);
+
+            server.listen(parseInt(port, 10), callback);
+
+            return server;
+        };
+    }
+</pre>
+<p>
+    La solución recomandada por el autor se basa en el uso de la librería
+    <a href="https://github.com/hongymagic/statik" target="_blank">statik</a>, la cual nos brinda la posibilidad de
+    arrancar un servidor HTTP sirviendo la carpeta <b>public</b> de nuestra aplicación de forma automática, dándonos
+    la posiblidad de modificar ciertas opciones como el puerto a utilizar.
+</p>
+<p>
+    De este modo, para hacer uso de esta librería sólo tenemos que cumplir el requisito de tener ya compilada nuestra
+    aplicación en la carpeta <b>public</b>.
+</p>
+<p>
+    A diferencia de la primera opción, ara hacer uso de esta implementación en
+    <a data-ng-href="{{general.getURLByScreenName('heroku')}}">Heroku</a> tenemos que ejecutar en el script
+    <b>start</b> de <a data-ng-href="{{general.getURLByScreenName('npm')}}">NPM</a> en nuestro <b>package.json</b>
+    el comando <b>node server</b>.
+</p>

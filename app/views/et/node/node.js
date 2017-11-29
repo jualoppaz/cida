@@ -5,7 +5,7 @@
     angular.module('node')
         .controller('NodeController', Controller);
 
-    Controller.$inject = ['nodeService'];
+    Controller.$inject = ['node'];
     function Controller(node){
         var self = this;
 

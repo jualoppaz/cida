@@ -51,8 +51,7 @@
 
         $rootScope.$on('$stateChangeSuccess', stateChangeSuccess);
         function stateChangeSuccess(event, toState, toParams, fromState, fromParams){
-
-            //angular.element(document).ready(onResize);
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
         }
 
         $rootScope.$on('$stateChangeError', stateChangeError);
