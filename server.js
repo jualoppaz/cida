@@ -2,47 +2,55 @@ var express, http, sysPath;
 express = require('express');
 sysPath = require('path');
 http = require('http');
-exports.startServer = function(port, path, callback) {
-    var app, server;
-    app = express();
+var statik = require('statik');
 
-    if(process.env.PORT){
-        console.log("Path recibido en Heroku:", path);
-    }
-
-    app.use(express.static(path));
-
-    require('./express/router')(app);
-
-    app.all("/", function(req, res) {
-        console.log("Entramos en ruta: /");
-        console.log("Ruta recibida:", req.url);
-        return res.redirect('index.html');
+if(process.env.PORT){
+    statik({
+        port: process.env.PORT
     });
+}else {
+    exports.startServer = function (port, path, callback) {
+        var app, server;
+        app = express();
 
-    app.get("/docs*", function(req, res) {
-        return res.sendFile(sysPath.resolve(sysPath.join(path, "docs/index.html")));
-    });
+        if (process.env.PORT) {
+            console.log("Path recibido en Heroku:", path);
+        }
 
-    app.all('/*', function(req, res) {
-        console.log("Entramos en ruta: /*");
-        console.log("Ruta recibida:", req.url);
+        app.use(express.static(path));
 
-        var filePath = sysPath.resolve(sysPath.join(path, 'index.html'));
+        require('./express/router')(app);
 
-        console.log("Ubicacion del fichero a retornar:", filePath);
-        return res.sendFile(filePath);
-    });
+        app.all("/", function (req, res) {
+            console.log("Entramos en ruta: /");
+            console.log("Ruta recibida:", req.url);
+            return res.redirect('index.html');
+        });
 
-    server = http.createServer(app);
+        app.get("/docs*", function (req, res) {
+            return res.sendFile(sysPath.resolve(sysPath.join(path, "docs/index.html")));
+        });
 
-    // Inicializacion alternativa en Heroku
-    port = process.env.port || port;
+        app.all('/*', function (req, res) {
+            console.log("Entramos en ruta: /*");
+            console.log("Ruta recibida:", req.url);
 
-    server.listen(parseInt(port, 10), callback);
+            var filePath = sysPath.resolve(sysPath.join(path, 'index.html'));
 
-    return server;
-};
+            console.log("Ubicacion del fichero a retornar:", filePath);
+            return res.sendFile(filePath);
+        });
+
+        server = http.createServer(app);
+
+        // Inicializacion alternativa en Heroku
+        port = process.env.port || port;
+
+        server.listen(parseInt(port, 10), callback);
+
+        return server;
+    };
+}
 
 /*var portHeroku = process.env.PORT;
 

@@ -1,13 +1,7 @@
 exports.config = {
-    /*overrides: {
-        production: {
-            optimize: false
-        }
-    },*/
     npm: {
         enabled: false
     },
-    //fileListInterval: 2000,
     files: {
         javascripts: {
             joinTo: {
@@ -73,7 +67,7 @@ exports.config = {
     // Configuracion especifica del servidor NodeJS utilizado mediante Brunch
     server: {
         path: 'server.js',
-        port: Number(process.env.PORT) || 3333,
+        port: 3333,
         base: '/'
     }
 };
