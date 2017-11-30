@@ -2,16 +2,16 @@
 
     'use strict';
 
-    angular.module('vnav')
-        .factory('vnav', service);
+    angular.module('hnav')
+        .factory('hnav', service);
 
     service.$inject = ['$http'];
 
     /**
      * @ngdoc service
-     * @name vnav.vnav
+     * @name hnav.hnav
      * @description
-     * Servicio que contendrá todas las operaciones necesarias relacionadas con el menú lateral.
+     * Servicio que contendrá todas las operaciones necesarias relacionadas con el menú horizontal.
      */
     function service($http) {
 

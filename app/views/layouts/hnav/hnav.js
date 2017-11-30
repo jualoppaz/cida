@@ -3,11 +3,11 @@
     'use strict';
 
     angular.module('hnav')
-        .controller('HnavCtrl', HnavCtrl);
+        .controller('HnavController', HnavController);
 
-    HnavCtrl.$inject = [];
+    HnavController.$inject = [];
 
-    function HnavCtrl() {
+    function HnavController() {
 
         //var self = this;
 

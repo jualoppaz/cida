@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('vnav')
-        .controller('VnavCtrl', VnavCtrl);
+        .controller('VnavController', VnavController);
 
-    VnavCtrl.$inject = ['vnav', '$state', '$scope'];
+    VnavController.$inject = ['vnav', '$state', '$scope'];
 
-    function VnavCtrl(vnav, $state, $scope) {
+    function VnavController(vnav, $state, $scope) {
 
         var self = this;
 
@@ -15,9 +15,6 @@
             "ci": false,
             "et": false
         };
-
-        vnav.getMenuCI();
-
 
         /**
          * Metodo para inicializar por defecto los menus replegados
