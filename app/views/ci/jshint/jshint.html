@@ -4,48 +4,50 @@
 </h1>
 <p>
     Para generar código de calidad se necesita una herramienta que nos ayude a determinar si estamos siguiendo o
-    no buenas prácticas. En esta aplicación se ha escogido JSHint.
+    no buenas prácticas. En esta aplicación se ha escogido <b>JSHint</b>.
 </p>
 <p>
     Podríamos haber elegido otra librería, pero esta me parece bastante buena por dos motivos:
 </p>
 <ul>
     <li>Multitud de posibilidades de configuración a la hora de validar el código.</li>
-    <li>Posibilidad de integración con <a ui-sref="brunch">Brunch</a> mediante el plugin jshint-brunch.</li>
+    <li>Posibilidad de integración con <a ui-sref="brunch">Brunch</a> mediante el plugin <b>jshint-brunch</b>.</li>
 </ul>
 <p>
-    Esta librería es capaz de verificar una serie de requisitos a cumplir por un fichero JavaScript. Errores comunes que se suelen
-    cometer y que esta librería nos ayudará a evitar pueden ser:
+    Esta librería es capaz de verificar una serie de requisitos a cumplir por un fichero JavaScript. Errores comunes
+    que se suelen cometer y que esta librería nos ayudará a evitar pueden ser:
 </p>
 <ul>
     <li>Declarar variables que finalmente no se utilizan.</li>
     <li>Utilizar variables que no han sido previamente inicializadas.</li>
     <li>Implementar métodos con complejidad alta en lugar de métodos menos complejos que se llamen entre sí.</li>
-    <li>Comparar valores de variables con doble igual (==, no tiene en cuenta el tipo del operando) en lugar de triple igual (===,
-        tiene en cuenta el tipo del operando).</li>
+    <li>Comparar valores de variables con doble igual (==, no tiene en cuenta el tipo del operando) en lugar de triple
+        igual (===, tiene en cuenta el tipo del operando).</li>
     <li>etc.</li>
 </ul>
 <p>
-    Sin embargo, el plugin jshint-brunch nos permitirá una serie de configuraciones extra. La principal es que podremos establecer,
-    mediante una expresión regular, qué ficheros deben ser validados en tiempo de compilación. De este modo evitaremos tener que
-    ejecutar la herramienta tantas veces como ficheros JS queramos validar, ya que se realizará una únca llamada y será
-    <a ui-sref="brunch">Brunch</a> quien la haga, y no nosotros.
+    Sin embargo, el plugin <b>jshint-brunch</b> nos permitirá una serie de configuraciones extra. La principal es que
+    podremos establecer, mediante una expresión regular, qué ficheros deben ser validados en tiempo de compilación.
+    De este modo evitaremos tener que ejecutar la herramienta tantas veces como ficheros JS queramos validar, ya que
+    se realizará una únca llamada y será <a ui-sref="brunch">Brunch</a> quien la haga, y no nosotros.
 </p>
 <p>
-    Si instalamos la librería como dependencia normal (campo <b>dependencies</b> del fichero Package.json) se ejecutará la validación
-    de ficheros JavaScript en todos los entornos. El comportamiento que desearemos normalmente será ejecutar la librería sólo en
-    nuestro entorno de desarrollo, por lo que deberemos añadirla como dependencia de desarrollo (campo <b>devDependencies</b> del
-    fichero Package.json). Esto implica que al compilar en producción (<b>npm install --production</b>) no se instalarán aquellas
-    dependencias que hayan sido declaradas de desarrollo.
+    Si instalamos la librería como dependencia normal (campo <b>dependencies</b> del fichero Package.json) se
+    ejecutará la validación de ficheros JavaScript en todos los entornos. El comportamiento que desearemos normalmente
+    será ejecutar la librería sólo en nuestro entorno de desarrollo, por lo que deberemos añadirla como dependencia
+    de desarrollo (campo <b>devDependencies</b> del fichero Package.json). Esto implica que al compilar en
+    Producción (<b>npm install --production</b>) no se instalarán aquellas dependencias que hayan sido declaradas de
+    desarrollo.
 </p>
 <p>
-    La única pega que podemos encontrar en la librería viene dada por <a ui-sref="brunch">Brunch</a>. Al compilarse el proyecto
-    con <a ui-sref="brunch">Brunch</a> se realiza una búsqueda en el Package.json de todos los posibles plugins de la librería. Al
-    encontrarse jshint-brunch como dependencia de desarrollo se intentará ejecutar por parte de <a ui-sref="brunch">Brunch</a>, pero
-    al no ser encontrado se mostrará un warning en consola indicando este hecho.
+    La única pega que podemos encontrar en la librería viene dada por <a ui-sref="brunch">Brunch</a>. Al compilarse el
+    proyecto con <a ui-sref="brunch">Brunch</a> se realiza una búsqueda en el Package.json de todos los posibles
+    plugins de la librería. Al encontrarse <b>jshint-brunch</b> como dependencia de desarrollo se intentará ejecutar
+    por parte de <a ui-sref="brunch">Brunch</a>, pero al no ser encontrado se mostrará un warning en consola indicando
+    este hecho.
 </p>
 <p>
-    No se trata realmente de un error, ya que no querremos de forma habitual validar nuestro código JavaScript en Producción, pero
-    no existe configuración alguna para el plugin de modo que podamos indicar que no queremos realizar las validaciones en algún
-    entorno en particular. Ojalá todos los problemas fueran éste.
+    No se trata realmente de un error, ya que no querremos de forma habitual validar nuestro código JavaScript en
+    Producción, pero no existe configuración alguna para el plugin de modo que podamos indicar que no queremos
+    realizar las validaciones en algún entorno en particular. Ojalá todos los problemas fueran éste.
 </p>

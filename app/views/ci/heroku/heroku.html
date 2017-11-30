@@ -3,7 +3,7 @@
     <img data-ng-src="{{heroku.logo}}" class="tecnologia-titulo img-rounded"/>
 </h1>
 <p>
-    El hosting utilizado para alojar esta aplicación web es Heroku. Se trata de una plataforma como servicio de
+    El hosting utilizado para alojar esta aplicación web es <b>Heroku</b>. Se trata de una plataforma como servicio de
     computación en la Nube.
 </p>
 <p>
@@ -11,14 +11,15 @@
     que puedes compilar tu aplicación en el servidor al igual que puedas hacerlo en tu máquina.
 </p>
 <p>
-    Para desplegar una aplicación en Heroku tenemos que indicar de alguna forma qué tipo de servidor vamos a correr.
+    Para desplegar una aplicación en <b>Heroku</b> tenemos que indicar de alguna forma qué tipo de servidor vamos a
+    correr.
     En este caso, en el que vamos a utilizar un servidor de
     <a data-ng-href="{{general.getURLByScreenName('node')}}">NodeJS</a>, tenemos 2 opciones:
 </p>
 <ul>
     <li>Crear y configurar un fichero llamado <b>Procfile</b></li>
     <li>Hacer uso del script <b>start</b> de <a data-ng-href="{{general.getURLByScreenName('npm')}}">NPM</a>, el cual
-        es ejecutado por defecto desde Heroku si no encuentra un <b>Procfile</b></li>
+        es ejecutado por defecto desde <b>Heroku</b> si no encuentra un <b>Procfile</b></li>
 </ul>
 <p>
     Si elegimos la primera opción tendríamos que añadir en el <b>Procfile</b> un contenido similar a este:
@@ -27,8 +28,8 @@
     web: node server.js
 </pre>
 <p>
-    Con <b>web</b> le indicamos a Heroku el tipo de proceso que deseamos ejecutar. A continuación se le indica que el
-    servidor a correr será implementado con <a data-ng-href="{{general.getURLByScreenName('node')}}">NodeJS</a>,
+    Con <b>web</b> le indicamos a <b>Heroku</b> el tipo de proceso que deseamos ejecutar. A continuación se le indica
+    que el servidor a correr será implementado con <a data-ng-href="{{general.getURLByScreenName('node')}}">NodeJS</a>,
     mientras que en el último
     parámetro indicamos cuál es el fichero que se corresponde con el servidor.
 </p>
@@ -46,15 +47,18 @@
     }
 </pre>
 <p>
-    Cuando desplegamos nuestra aplicación en Heroku se instalan nuestras dependencias en primer lugar. A continuación
-    se ejecutan los scripts <b>preinstall</b> y <b>postinstall</b>. Después de que se realicen todas las acciones que
-    hemos indicado Heroku se encarga de iniciar la aplicación. El resto de scripts no se ejecutan de forma automática,
-    sólo lo harán si son llamados directamente.
+    Cuando desplegamos nuestra aplicación en <b>Heroku</b> se instalan nuestras dependencias en primer lugar. A
+    continuación se ejecutan los scripts <b>preinstall</b> y <b>postinstall</b>. Después de que se realicen todas las
+    acciones que hemos indicado <b>Heroku</b> se encarga de iniciar la aplicación. El resto de scripts no se ejecutan
+    de forma automática, sólo lo harán si son llamados directamente.
 </p>
 <p>
-    Como dijimos, Heroku busca el fichero <b>Procfile</b> para arrancar la aplicación. Como hemos optado por la
-    segunda opción, Heroku ejecutará el script <b>start</b>, en el que iniciamos el servidor
-    <a data-ng-href="{{general.getURLByScreenName('brunch')}}">Brunch</a>.
+    Como dijimos, <b>Heroku</b> busca el fichero <b>Procfile</b> para arrancar la aplicación. Como hemos optado por la
+    segunda opción, <b>Heroku</b> ejecutará el script <b>start</b>, en el que iniciamos el servidor
+    <a data-ng-href="{{general.getURLByScreenName('brunch')}}">Brunch</a>. En la sección
+    <a data-ng-href="{{general.getURLByScreenName('node')}}">NodeJS</a> se explica una forma alternativa para el
+    despliegue de aplicaciones <a data-ng-href="{{general.getURLByScreenName('brunch')}}">Brunch</a> en <b>Heroku</b>,
+    la cual es recomendada por el propio autor de la herramienta.
 </p>
 <p>
     Si lo hemos hecho todo bien ya podremos disfrutar de nuestra aplicación web en funcionamiento.

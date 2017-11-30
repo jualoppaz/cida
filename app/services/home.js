@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('general').factory('homeService', service);
+    angular.module('general').factory('home', service);
 
     service.$inject = [];
 

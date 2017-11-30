@@ -3,20 +3,23 @@
     <img data-ng-src="{{brunch.logo}}" class="tecnologia-titulo img-rounded"/>
 </h1>
 <p>
-    El Front-End de esta aplicación web se compila al completo con el framework Brunch.
+    El Front-End de esta aplicación web se compila al completo con el framework <b>Brunch</b>.
 </p>
 <p>
     Ésta es la herramienta clave para conseguir implementar una buena Integración Continua sobre una aplicación web con
-    <a data-ng-href="{{general.getURLByScreenName('angularjs')}}">AngularJS</a>. Podríamos haber elegido otra como pueden
-    ser Gulp o Grunt, pero Brunch nos permite realizar multitud de tareas sin tener que desarrollar lo más mínimo
-    gracias a la multitud de plugins existentes y sus amplias posibilidade de configuración.
+    <a data-ng-href="{{general.getURLByScreenName('angularjs')}}">AngularJS</a>. Podríamos haber elegido otra como
+    pueden ser <a href="https://gulpjs.com/" target="_blank">Gulp</a> o
+    <a href="https://gruntjs.com/" target="_blank">Grunt,</a> pero <b>Brunch</b> nos permite realizar multitud de
+    tareas sin tener que desarrollar lo más mínimo gracias a la multitud de plugins existentes y sus amplias
+    posibilidades de configuración.
 </p>
 <p>
-    La configuración de Brunch debe ir en un fichero <b>brunch-config.js</b> situado en la raíz de nuestro proyecto,
-    ruta en la que iniciaremos nuestro servidor mediante Brunch.
+    La configuración de <b>Brunch</b> debe ir en un fichero <b>brunch-config.js</b> situado en la raíz de nuestro
+    proyecto, ruta en la que iniciaremos nuestro servidor mediante <b>Brunch</b>.
 </p>
 <p>
-    A continuación veremos un posible fichero <b>brunch-config.js</b> para poder desarrollar de una forma ágil y eficiente:
+    A continuación veremos un posible fichero <b>brunch-config.js</b> para poder desarrollar de una forma ágil y
+    eficiente:
 </p>
 <pre>
 exports.config = {
@@ -94,8 +97,8 @@ exports.config = {
     en los que se producen dependencias entre ficheros.
 </p>
 <p>
-    En el campo <b>plugins</b> podemos encontrar todas aquellas configuraciones que son externas a Brunch y que
-    pertenecen a plugins desarrollados específicamente para ser utilizados de forma implícita. Se destacan en este
+    En el campo <b>plugins</b> podemos encontrar todas aquellas configuraciones que son externas a <b>Brunch</b> y
+    que pertenecen a plugins desarrollados específicamente para ser utilizados de forma implícita. Se destacan en este
     ejemplo las configuraciones de <a data-ng-href="{{general.getURLByScreenName('jshint')}}">JSHint</a>, <b>Digest</b>
     y <b>AfterBrunch</b>.
 </p>
@@ -105,8 +108,9 @@ exports.config = {
     que nos permite ejecutar cuantos scripts queramos tras la compilación de nuestro proyecto mediante Brunch.
 </p>
 <p>
-    Tenemos total libertad para añadir cuantos plugins de Brunch queramos. Sólo tenemos que acudir a su web oficial y
-    buscar la documentación oficial del plugin a utilizar y configurarlo correctamente en este campo del fichero.
+    Tenemos total libertad para añadir cuantos plugins de <b>Brunch</b> queramos. Sólo tenemos que acudir a su web
+    oficial y buscar la documentación oficial del plugin a utilizar y configurarlo correctamente en este campo del
+    fichero.
 </p>
 <p>
     En último lugar detallamos el servidor que utilizaremos para iniciar nuestra aplicación a través del comando:
@@ -115,8 +119,8 @@ exports.config = {
     $ brunch watch --server
 </pre>
 <p>
-    Por defecto, Brunch arranca nuestra aplicación en <b>http://localhost:3333</b> sirviendo la carpeta pública situada
-    en <b>/public</b>, la cual debe contar con un fichero <b>index.html</b>. Como necesitamos realizar pequeños
+    Por defecto, <b>Brunch</b> arranca nuestra aplicación en <b>http://localhost:3333</b> sirviendo la carpeta pública
+    situada en <b>/public</b>, la cual debe contar con un fichero <b>index.html</b>. Como necesitamos realizar pequeños
     ajustes, algunos relacionados con el despliegue en
     <a data-ng-href="{{general.getURLByScreenName('heroku')}}">Heroku</a>, hemos redefinido algunas propiedades.
 </p>

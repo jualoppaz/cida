@@ -2,10 +2,16 @@
 
     'use strict';
 
-    angular.module('general').factory('generalService', service);
+    angular.module('general').factory('general', service);
 
     service.$inject = ['$state'];
 
+    /**
+     * @ngdoc service
+     * @name general.general
+     * @description
+     * Servicio que contendrá todas las operaciones necesarias relacionadas con la sección General.
+     */
     function service($state){
 
         var states = {
@@ -35,9 +41,13 @@
         return service;
 
         /**
-         * Método privado para consultar el código del estado de una pantalla
-         * @param screen Nombre común de la pantalla
-         * @returns {*|string} Código del estado
+         * @ngdoc method
+         * @name general.general#getStateNameByScreen
+         * @methodOf general.general
+         * @description
+         * Método para consultar el identificador completo de una pantalla dado el nombre corto
+         * @param {string} screen Nombre común de la pantalla
+         * @returns {string} Código de vista asociado a la pantalla introducida
          */
         function getStateNameByScreen(screen){
             var res;
@@ -48,11 +58,15 @@
         }
 
         /**
-         * Método para obtener la URL del estado de una pantalla
-         * @param screen Nombre común de la pantalla
-         * @returns {*|string}
+         * @ngdoc method
+         * @name general.general#getURLByScreenName
+         * @methodOf general.general
+         * @description
+         * Método para consultar la URL completa de una pantalla
+         * @param {string} screen Nombre común de la pantalla
+         * @returns {string} URL completa de la vista asociada a la pantalla introducida
          */
-        function getURLByScreenName(screen){
+        function getURLByScreenName(screen) {
             var res, name;
 
             name = getStateNameByScreen(screen);
@@ -63,8 +77,12 @@
         }
 
         /**
-         * Método que indica el nombre del estado actual
-         * @returns {*|string}
+         * @ngdoc method
+         * @name general.general#getActualState
+         * @methodOf general.general
+         * @description
+         * Método para consultar el nombre del estado actual
+         * @returns {string} Código que identifica de forma única a la pantalla actual
          */
         function getActualState(){
             return $state.current.name;

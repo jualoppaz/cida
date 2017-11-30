@@ -2,16 +2,16 @@
 
     'use strict';
 
-    angular.module('vnav')
-        .factory('vnav', service);
+    angular.module('footer')
+        .factory('footer', service);
 
     service.$inject = ['$http'];
 
     /**
      * @ngdoc service
-     * @name vnav.vnav
+     * @name footer.footer
      * @description
-     * Servicio que contendrá todas las operaciones necesarias relacionadas con el menú lateral.
+     * Servicio que contendrá todas las operaciones necesarias relacionadas con el footer.
      */
     function service($http) {
 

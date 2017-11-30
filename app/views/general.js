@@ -4,11 +4,11 @@
 
     angular.module('general')
 
-        .controller('GeneralCtrl', GeneralCtrl);
+        .controller('GeneralController', GeneralController);
 
-    GeneralCtrl.$inject = ['$scope', '$rootScope', 'settings', '$state', 'generalService'];
+    GeneralController.$inject = ['$scope', '$rootScope', 'settings', '$state', 'general'];
 
-    function GeneralCtrl($scope, $rootScope, settings, $state, general) {
+    function GeneralController($scope, $rootScope, settings, $state, general) {
         /* jshint validthis: true */
         var self = this;
 

@@ -145,28 +145,6 @@
                     </div>
                 </uib-accordion-heading>
             </div>
-            <div uib-accordion-group class="panel-default" is-disabled="true">
-                <uib-accordion-heading>
-                    <div class="second-level">
-                        <a data-ng-class="{
-                            'active': general.getActualState() === general.getStateNameByScreen('sequelize')
-                        }" data-ng-click="$event.stopPropagation()" data-ng-href="{{general.getURLByScreenName('sequelize')}}">
-                            SequelizeJS
-                        </a>
-                    </div>
-                </uib-accordion-heading>
-            </div>
-            <div uib-accordion-group class="panel-default" is-disabled="true">
-                <uib-accordion-heading>
-                    <div class="second-level">
-                        <a data-ng-class="{
-                            'active': general.getActualState() === general.getStateNameByScreen('postgre')
-                        }" data-ng-click="$event.stopPropagation()" data-ng-href="{{general.getURLByScreenName('postgre')}}">
-                            PostgreSQL
-                        </a>
-                    </div>
-                </uib-accordion-heading>
-            </div>
         </uib-accordion>
     </div>
 </uib-accordion>

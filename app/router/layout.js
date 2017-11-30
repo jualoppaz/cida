@@ -18,14 +18,14 @@
                     },
                     'hnav@layout': {
                         templateUrl: 'app/views/layouts/hnav/hnav.html',
-                        controller: 'HnavCtrl as hnav'
+                        controller: 'HnavController as hnav'
                     },
                     'main': {
                         templateUrl: 'app/views/layouts/main/main.html'
                     },
                     'vnav@layout': {
                         templateUrl: 'app/views/layouts/vnav/vnav.html',
-                        controller: 'VnavCtrl as vnav'
+                        controller: 'VnavController as vnav'
                     },
                     'sub-container@layout': {
                         templateUrl: 'app/views/layouts/sub-container/sub-container.html'
@@ -34,7 +34,8 @@
                         templateUrl: 'app/views/layouts/breadcrumbs/breadcrumbs.html'
                     },
                     'footer': {
-                        templateUrl: 'app/views/layouts/footer/footer.html'
+                        templateUrl: 'app/views/layouts/footer/footer.html',
+                        controller: 'FooterController as footer'
                     }
                 },
                 data: {
